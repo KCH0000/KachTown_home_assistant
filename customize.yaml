@@ -1,0 +1,382 @@
+# Users
+device_tracker.google_maps_111529493950114936363:
+       friendly_name: "Валерия" 
+device_tracker.google_maps_114196647749487232514:
+       friendly_name: "Кирилл" 
+device_tracker.kirill_s_oneplus_a5010:
+       homebridge_hidden: true
+       hidden: true
+
+# Termostats
+climate.ilya_room_termostat:
+  friendly_name: "Термостат Илья"
+  hidden: false
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+climate.arina_room_termostat:
+  friendly_name: "Термостат Арина"
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+climate.toilet_termostat:
+  friendly_name: "Термостат Туалет"
+  hidden: false
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+climate.parent_room_termostat:
+  friendly_name: "Термостат Спальня"
+  hidden: false
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+climate.kitchen_floor_heater:
+  friendly_name: "Термостат теплого пола на Кухне"
+  hidden: false
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+  hvac_modes:
+    - heat
+    - 'off'
+  fan_modes:
+
+climate.guets_toilet_floor_heater:
+  friendly_name: "Термостат теплого пола в гостевом туалете"
+  hidden: false
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+  hvac_modes:
+    - heat
+    - 'off'
+  fan_modes:
+
+# Switches - heaters
+switch.boiler_room_heater:
+  friendly_name: "Обогреватель в бойлерной"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+switch.parent_room_heater:
+  friendly_name: "Обогреватель в спальне родителей"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+switch.ilya_room_heater:
+  friendly_name: "Обогреватель в спальне Ильи"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+switch.toilet_heater:
+  friendly_name: "Обогреватель в туалете"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+switch.kitchen_heater:
+  friendly_name: "Обогреватель на кухне"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+switch.arina_room_heater:
+  friendly_name: "Обогреватель спальне Арины"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+switch.garage_heater:
+  friendly_name: "Обогреватель в гараже"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+# Switches - others
+switch.boiler_room_water_supply:
+  friendly_name: "Водоснабжение"
+  homebridge_hidden: false
+  entity_picture: /local/img/water_supply.png
+  icon:
+
+switch.garage_gate:
+  friendly_name: "Гаражные ворота"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:garage
+
+lock.garage_gate:
+  friendly_name: "Гаражные ворота"
+  homebridge_hidden: false
+
+binary_sensor.workday:
+  friendly_name: "Рабочий день"
+  homebridge_hidden: false
+
+# Switches - lights
+switch.street_lights:
+  friendly_name: "Свет на улице"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:lightbulb
+
+switch.yard_light_at_garage:
+  friendly_name: "Свет перед гаражом"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:lightbulb
+
+switch.boiler_room_light:
+  friendly_name: "Свет в бойлерной"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:lightbulb
+
+switch.garage_light:
+  friendly_name: "Свет в гараже"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:lightbulb
+
+# Switches - motion sensors
+switch.parent_room_motion_armed:
+  friendly_name: "Датчик движения в спальне родителей"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:motion-sensor
+
+switch.kitchen_corridor_motion_armed:
+  friendly_name: "Датчик движения в коридоре кухни"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:motion-sensor
+
+switch.toilet_motion_armed:
+  friendly_name: "Датчик движения в туалете"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:motion-sensor
+
+switch.kitchen_motion_armed:
+  friendly_name: "Датчик движения на кухне"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:motion-sensor
+
+switch.arina_room_motion_armed:
+  friendly_name: "Датчик движения в спальне Арины"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:motion-sensor
+
+switch.ilya_room_motion_armed:
+  friendly_name: "Датчик движения в спальне Ильи"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:motion-sensor
+
+# Switches - motion sensors
+switch.red_button_one_click:
+  friendly_name: "Красная кнопка 1 клик"
+  homebridge_hidden: false
+  entity_picture: /local/img/red_button.jpg
+  icon:
+
+switch.red_button_two_click:
+  friendly_name: "Красная кнопка 2 клика"
+  homebridge_hidden: false
+  entity_picture: /local/img/red_button.jpg
+  icon:
+
+switch.red_button_three_click:
+  friendly_name: "Красная кнопка 3 клика"
+  homebridge_hidden: false
+  entity_picture: /local/img/red_button.jpg
+  icon:
+
+# Switches - door sensors
+switch.guest_toilet_door_sensor_armed:
+  friendly_name: "Датчик двери в гостевом туалете"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:door-closed
+
+# Lights - dimmers
+light.arina_room_light:
+  friendly_name: "Свет в спальне Арины"
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+light.guest_toilet_light:
+  friendly_name: "Свет в гостевом туалете"
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+light.ilya_room_light_rgb:
+  friendly_name: "RGB подсветка в спальне Ильи"
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+light.ilya_room_light_second:
+  friendly_name: "Подсветка в спальне Ильи"
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+light.kitchen_light:
+  friendly_name: "Свет на кухне"
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+light.kitchen_light_second:
+  friendly_name: "Подсветка на кухне"
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+light.kitchen_light_rgb:
+  friendly_name: "Подсветка RGB на кухне"
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+light.kitchen_light_tabletop:
+  friendly_name: "Подсветка столешницы на кухне"
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+light.kitchen_corridor_light:
+  friendly_name: "Свет в коридоре не кухне"
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+light.ilya_room_light:
+  friendly_name: "Свет в спальне Ильи"
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+# Covers
+cover.arina_room_shutter_front:
+  friendly_name: "Передние жалюзи в спальне Арины"
+  homebridge_hidden: false
+  entity_picture:
+
+cover.arina_room_shutter_left:
+  friendly_name: "Левые жалюзи в спальне Арины"
+  homebridge_hidden: false
+  entity_picture:
+
+cover.kitchen_shutter:
+  friendly_name: "Жалюзи на кухне"
+  homebridge_hidden: false
+  entity_picture:
+
+cover.ilya_room_shutter:
+  friendly_name: "Жалюзи спальне Ильи"
+  homebridge_hidden: false
+  entity_picture:
+
+# Sensors - Light
+sensor.toilet_lux:
+  friendly_name: "Датчик света в туалете"
+  homebridge_hidden: false
+  device_class: illuminance
+
+sensor.arina_room_lux:
+  friendly_name: "Датчик света в спальне Арины"
+  homebridge_hidden: false
+  device_class: illuminance
+
+sensor.kitchen_lux:
+  friendly_name: "Датчик света на кухне"
+  homebridge_hidden: false
+  device_class: illuminance
+
+sensor.parent_room_lux:
+  friendly_name: "Датчик света в спальне родителей"
+  homebridge_hidden: false
+  device_class: illuminance
+
+sensor.kitchen_corridor_lux:
+  friendly_name: "Датчик света в коридоре на кухне"
+  homebridge_hidden: false
+  device_class: illuminance
+
+sensor.ilya_room_lux:
+  friendly_name: "Датчик света в спальне Ильи"
+  homebridge_hidden: false
+  device_class: illuminance
+
+# Sensors - Temperature
+sensor.toilet_termometer_batt:
+  friendly_name: "Датчик температуры в туалете"
+  homebridge_hidden: false
+  device_class: temperature
+
+sensor.arina_room_termometer_batt:
+  friendly_name: "Датчик температуры в спальне Арины"
+  homebridge_hidden: false
+  device_class: temperature
+
+sensor.parent_room_termometer_batt:
+  friendly_name: "Датчик температуры в спальне родителей"
+  homebridge_hidden: false
+  device_class: temperature
+
+sensor.ilya_room_termometer_batt:
+  friendly_name: "Датчик температуры в спальне Ильи"
+  homebridge_hidden: false
+  device_class: temperature
+
+sensor.kitchen_termometer_batt:
+  friendly_name: "Датчик температуры на кухне"
+  homebridge_hidden: false
+  device_class: temperature
+
+# Sensors - Motion
+binary_sensor.arina_room_motion:
+  friendly_name: "Датчик движения в спальне Арины"
+  homebridge_hidden: false
+  device_class: motion
+
+binary_sensor.parent_room_motion:
+  friendly_name: "Датчик движения в спальне родителей"
+  homebridge_hidden: false
+  device_class: motion
+
+binary_sensor.toilet_motion:
+  friendly_name: "Датчик движения в туалете"
+  homebridge_hidden: false
+  device_class: motion
+
+binary_sensor.ilya_room_motion:
+  friendly_name: "Датчик движения в спальне Ильи"
+  homebridge_hidden: false
+  device_class: motion
+
+binary_sensor.kitcher_corridor_motion:
+  friendly_name: "Датчик движения в коридоре кухни"
+  homebridge_hidden: false
+  device_class: motion
+
+binary_sensor.kitchen_motion:
+  friendly_name: "Датчик движения на кухне"
+  homebridge_hidden: false
+  device_class: motion
+
+# input_select

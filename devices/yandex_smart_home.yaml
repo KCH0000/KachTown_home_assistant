@@ -1,0 +1,25 @@
+filter:
+#  include_domains:
+  include_entities:
+    - climate.arina_room_termostat
+    - light.arina_room_light
+    - light.ilya_room_light
+    - input_boolean.kitchen_movie_mode
+    - input_boolean.kitchen_day_sleep_mode
+#  exclude_entities:
+entity_config:
+  climate.arina_room_termostat:
+    name: 'Термостат'
+    room: 'Спальня Арины'
+  light.arina_room_light:
+    name: 'Свет'
+    room: 'Спальня Арины'
+  light.ilya_room_light:
+    name: 'Свет'
+    room: 'Спальня Ильи'
+  input_boolean.kitchen_movie_mode:
+    name: 'Режим Кино'
+    room: 'Кухня'
+  input_boolean.kitchen_day_sleep_mode:
+    name: 'Режим Дневного Сна'
+    room: 'Кухня'

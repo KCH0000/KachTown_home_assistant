@@ -1,0 +1,15 @@
+- alias: View object
+  trigger:
+    - platform: state
+      entity_id:
+        - switch.red_button_one_click
+        - switch.red_button_two_click
+      to: 'on'
+  action:
+    service: notify.telegram_dev
+    data_template:
+      title: "Время"
+      message: >
+        {% set time_string = states('sensor.date') + 'T' + states('sensor.time') + ':00+03:00'  %}
+        {% set wakeup_string = states('sensor.date') + 'T' + states('input_datetime.daily_wakeup_time') + '+03:00'  %}
+        {{ as_timestamp(wakeup_string) - as_timestamp(time_string) | int  == 300}}

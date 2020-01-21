@@ -1,0 +1,33 @@
+- id: guets_toilet_light_on
+  alias: 'Управление светом в гостевом туалете ВКЛ'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.guest_toilet_door_sensor
+      from: "off"
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: light.guest_toilet_light
+      state: "off"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.guest_toilet_light
+        brightness: 255
+        transition: 4
+
+- id: guets_toilet_light_off
+  alias: 'Управление светом в гостевом туалете ВЫКЛ'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.guest_toilet_door_sensor
+      from: "off"
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: light.guest_toilet_light
+      state: "on"
+  action:
+    - service: light.turn_off
+      entity_id: light.guest_toilet_light

@@ -1,0 +1,37 @@
+- id: auto_away_mode_on
+  alias: 'Auto AWAY mode'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.anybody_home
+      from: 'on'
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: input_select.home_mode
+      state: 'Home'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_mode
+        option: 'Away'
+    - service: notify.telegram_family
+      data:
+        title: 'Смена режима'
+        message: 'Все меня покинули'
+
+- id: auto_home_mode_on
+  alias: 'Auto HOME mode'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.anybody_home
+      from: 'off'
+      to: 'on'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_mode
+        option: 'Home'
+    - service: notify.telegram_family
+      data:
+        title: 'Смена режима'
+        message: 'Привет, кажаные мешки'

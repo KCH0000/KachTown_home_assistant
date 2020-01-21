@@ -1,0 +1,102 @@
+#############################################
+homeassistant:
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 170
+  unit_system: metric
+  time_zone: !secret time_zone
+  name: KachTown
+  whitelist_external_dirs:
+    - /tmp
+  customize: !include customize.yaml
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+python_script:
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+#############################################
+#           HTTP config                     #
+#############################################
+http:
+    base_url: !secret base_url
+    use_x_forwarded_for: true
+#    ssl_certificate: /config/ssl/fullchain.pem
+#    ssl_key: /config/ssl/privkey.pem
+    trusted_proxies:
+      - 192.168.112.4
+      - 127.0.0.1
+      - 192.168.112.1
+      - 172.24.0.4
+# Text to speech
+#tts:
+#  - platform: google_translate
+
+# Includes files setting GLOBAL
+group: !include_dir_merge_named group/
+
+automation: !include_dir_merge_list automations/
+
+script: !include scripts.yaml
+climate: !include devices/climates.yaml
+light: !include devices/lights.yaml
+lock: !include devices/locks.yaml
+sensor: !include devices/sensors.yaml
+binary_sensor: !include devices/binary_sensors.yaml
+media_player: !include devices/media_players.yaml
+zone: !include zones.yaml
+
+#############################################
+input_boolean: !include_dir_merge_named inputs/input_boolean/
+input_select: !include_dir_merge_named inputs/input_select/
+input_datetime: !include_dir_merge_named inputs/input_datetime/
+#############################################
+scene: !include_dir_merge_list scenes/
+
+#############################################
+config:
+recorder:
+  db_url: !secret db_url
+
+#############################################
+vera:
+  vera_controller_url: !secret vera_controller_url
+#############################################
+device_tracker:
+  - platform: google_maps
+    username: !secret google_home_acc_name
+    max_gps_accuracy: 200
+
+#############################################
+yandex_smart_home: !include devices/yandex_smart_home.yaml
+
+#############################################
+telegram_bot:
+  - platform: broadcast
+    api_key: !secret telegram_chatbot_api_key 
+    allowed_chat_ids:
+      - 490740136 # kach
+      - -1001396494053 #Общий для интернета
+      - -1001489548186 #Семейный
+      - -1001246233382 # Dev
+notify:
+  - name: telegram_dev
+    platform: telegram
+    chat_id: -1001246233382
+  - name: telegram_all
+    platform: telegram
+    chat_id: -1001396494053
+  - name: telegram_kach
+    platform: telegram
+    chat_id: 490740136
+  - name: telegram_family
+    platform: telegram
+    chat_id: -1001489548186
+
+#############################################
+plex:
+   host: !secret host
+   port: 32400
+   token: !secret plex_server_token
+
+#############################################
+transmission:
+  host: !secret transmission_host

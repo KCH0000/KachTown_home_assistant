@@ -4,3 +4,9 @@
 /known_devices.yaml
 /.google_maps_location_sharing.cookies.x9266023332_gmail_com
 /test.py
+/venv/
+/ssl.back/
+/ssl/
+/custom_components/
+/.storage/
+/.idea

@@ -1,0 +1,7 @@
+home_mode:
+  name: 'Режим работы дома'
+  icon: mdi:home
+  options:
+    - Home
+    - Away
+    - Vacation

@@ -1,0 +1,213 @@
+- id: kitchen_long_motion_on
+  alias: 'Обнаружение движения на кухне'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kitchen_motion
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.kitchen_motion
+      state: 'off'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.kitchen_motion
+
+- id: kitchen_long_motion_off
+  alias: 'Обнаружение отсутсвия движения на кухне'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kitchen_motion
+    to: 'off'
+    for:
+      minutes: 20
+  condition:
+    - condition: state
+      entity_id: input_boolean.kitchen_motion
+      state: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.kitchen_motion
+
+- id: kitchen_light_auto_on
+  alias: 'Автоматическое ВКЛючение света'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.kitchen_motion
+      to: 'on'
+    - platform: state
+      entity_id: group.kitchen_manual_modes
+      to: 'off'
+      for:
+        seconds: 2
+  condition:
+    - condition: state
+      entity_id: group.kitchen_manual_modes
+      state: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_light_full
+    - service: scene.turn_on
+      entity_id: scene.kitchen_shutters_last_state
+
+- id: kitchen_light_auto_off
+  alias: 'Автоматическое ВЫКЛючение света'
+  trigger:
+    platform: state
+    entity_id: input_boolean.kitchen_motion
+    to: 'off'
+  condition:
+    - condition: state
+      entity_id: group.kitchen_manual_modes
+      state: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_light_off
+
+- id: kitchen_light_half_on
+  alias: 'Автоматическое включение света при входе'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kitcher_corridor_motion
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: group.kitchen_manual_modes
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.kitchen_motion
+      state: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_light_half
+
+- id: kitchen_light_half_off
+  alias: 'Автоматическое включение света при входе'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kitcher_corridor_motion
+    to: 'off'
+    for: 00:03:00
+  condition:
+    - condition: state
+      entity_id: group.kitchen_manual_modes
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.kitchen_motion
+      state: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_light_off
+
+- id: kitchen_movie_mode_by_plex_on
+  alias: 'Включение режима кино через Plex'
+  trigger:
+    - platform: state
+      entity_id: media_player.plex_shield_android_tv
+      to: 'playing'
+  condition:
+    - condition: state
+      entity_id: input_boolean.kitchen_movie_mode
+      state: 'off'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.kitchen_movie_mode
+
+- id: kitchen_movie_mode_by_plex_paused
+  alias: 'Пауза режима кино через Plex'
+  trigger:
+    - platform: state
+      entity_id: media_player.plex_shield_android_tv
+  condition:
+    - condition: state
+      entity_id: input_boolean.kitchen_movie_mode
+      state: 'on'
+  action:
+    - service: scene.turn_on
+      data_template:
+        entity_id: >
+          {% if is_state('media_player.plex_shield_android_tv', 'paused') %}
+            scene.kitchen_light_movie_paused
+          {% elif is_state('media_player.plex_shield_android_tv', 'playing') %}
+            scene.kitchen_light_movie
+          {% endif %}
+
+- id: kitchen_movie_mode_by_plex_off
+  alias: 'Включение режима кино через Plex'
+  trigger:
+    - platform: template
+      value_template: "{{ state_attr('media_player.nvidia_shield', 'app_id') != 'com.plexapp.android' }}"
+  condition:
+    - condition: state
+      entity_id: input_boolean.kitchen_movie_mode
+      state: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.kitchen_movie_mode
+
+- id: kitchen_movie_mode_on
+  alias: 'Ручное включение режима Кино'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.kitchen_movie_mode
+      to: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_light_movie
+    - condition: template
+      value_template: "{{ state_attr('sun.sun', 'elevation') > -2 }}"
+    - service: scene.create
+      data:
+        scene_id: kitchen_shutters_last_state
+        snapshot_entities:
+        - cover.kitchen_shutter
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.kitchen_shutter
+        position: 20
+
+- id: kitchen_movie_mode_off
+  alias: 'Автоматическое выключение режима Кино'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.kitchen_movie_mode
+      to: 'on'
+      for: 03:00:00
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.kitchen_movie_mode
+
+- id: kitchen_day_sleep_mode_on
+  alias: 'Ручное включение режима Дневного Сна'
+  trigger:
+    platform: state
+    entity_id: input_boolean.kitchen_day_sleep_mode
+    to: 'on'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_light_day_sleep
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.nvidia_shield
+        volume_level: 0.2
+    - condition: template
+      value_template: "{{ state_attr('sun.sun', 'elevation') > 4 }}"
+    - service: scene.create
+      data:
+        scene_id: kitchen_shutters_last_state
+        snapshot_entities:
+        - cover.kitchen_shutter
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.kitchen_shutter
+        position: 40
+
+- id: kitchen_day_sleep_mode_off
+  alias: 'Автоматическое выключение режима Дневго сна'
+  trigger:
+    platform: state
+    entity_id: input_boolean.kitchen_light_day_sleep
+    to: 'on'
+    for: 02:00:00
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.kitchen_light_day_sleep

@@ -1,0 +1,12 @@
+- platform: systemmonitor
+  resources:
+    - type: disk_free
+      arg: /media
+    - type: memory_use_percent
+    - type: processor_use
+    - type: load_15m
+
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'

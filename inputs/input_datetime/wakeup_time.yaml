@@ -1,0 +1,5 @@
+daily_wakeup_time:
+  name: 'Школьный будильник'
+  has_date: false
+  has_time: true
+  icon: mdi:alarm

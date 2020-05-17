@@ -107,3 +107,7 @@ zwave:
   device_config: !include zwave/device_config.yaml
   polling_interval: 3600000
   network_key: !secret zwave_network_key
+
+#############################################
+lovelace:
+  model: yaml

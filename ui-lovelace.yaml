@@ -1,0 +1,10 @@
+views:
+  - title: 1 этаж
+    path: 1_floor
+    id: 1_floor
+    cards:
+      - type: entities
+        label: section
+        show_header_toggle: false
+        entities:
+          - climate.arina_room_termostat

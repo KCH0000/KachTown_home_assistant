@@ -369,7 +369,7 @@ binary_sensor.ilya_room_motion:
   homebridge_hidden: false
   device_class: motion
 
-binary_sensor.kitcher_corridor_motion:
+binary_sensor.kitchen_corridor_motion:
   friendly_name: "Датчик движения в коридоре кухни"
   homebridge_hidden: false
   device_class: motion
@@ -379,4 +379,343 @@ binary_sensor.kitchen_motion:
   homebridge_hidden: false
   device_class: motion
 
-# input_select
+# Sensors - Battery level
+
+sensor.parent_room_motion_battery_level:
+  friendly_name: "Датчик движения в спальне родителей"
+  homebridge_hidden: false
+
+sensor.arina_room_motion_battery_level:
+  friendly_name: "Датчик движения в спальне Арины"
+  homebridge_hidden: false
+
+sensor.ilya_room_motion_battery_level:
+  friendly_name: "Датчик движения в спальне Ильи"
+  homebridge_hidden: false
+
+sensor.toilet_motion_battery_level:
+  friendly_name: "Датчик движения в туалете"
+  homebridge_hidden: false
+
+sensor.kitchen_corridor_motion_battery_level:
+  friendly_name: "Датчик движения в коридоре кухни"
+  homebridge_hidden: false
+
+sensor.kitchen_motion_battery_level:
+  friendly_name: "Датчик движения на кухни"
+  homebridge_hidden: false
+
+# Sensors - Power
+
+sensor.ilya_room_shutter_controller_power:
+  friendly_name: "Жалюзи в спальне Ильи"
+
+sensor.ilya_room_light_rgb_power:
+  friendly_name: "Подсветка в спальне Ильи"
+
+sensor.arina_room_shutter_controller_left_power:
+  friendly_name: "Жалюзи левые в спальне Арины"
+
+sensor.arina_room_shutter_controller_front_power:
+  friendly_name: "Жалюзи передние в спальне Арины"
+
+# Sensors - Voltage
+
+sensor.arina_room_shutter_controller_left_voltage:
+  friendly_name: "Вольтаж жалюзи левые в спальне Арины"
+
+sensor.arina_room_shutter_controller_front_voltage:
+  friendly_name: "Вольтаж жалюзи передние в спальне Арины"
+
+# Z-wave main devices
+
+zwave.parent_room_motion_sensor:
+  friendly_name: "Датчик движения в спальне родителей"
+zwave.parent_room_heater_switch_3kw:
+  friendly_name: "Обогреватели в спальне родителей"
+
+
+zwave.arina_room_motion_sensor:
+  friendly_name: "Датчик движения в спальне Арины"
+zwave.arina_room_heater_switch_3kw:
+  friendly_name: "Обогреватели в спальне Арины"
+zwave.arina_room_light:
+  friendly_name: "Основное освещение в спальне Арины"
+zwave.arina_room_shutter_left:
+  friendly_name: "Жалюзи левые в спальне Арины"
+zwave.arina_room_shutter_front:
+  friendly_name: "Жалюзи передние в спальне Арины"
+
+
+zwave.ilya_room_motion_sensor:
+  friendly_name: "Датчик движения в спальне Ильи"
+zwave.ilya_room_light:
+  friendly_name: "Основное освещение в спальне Ильи"
+zwave.ilya_room_shutter:
+  friendly_name: "Жалюзи в спальне Ильи"
+zwave.ilay_room_heater_switch_3kw:
+  friendly_name: "Обогреватели в спальне Ильи"
+zwave.ilya_room_light_rgb:
+  friendly_name: "Дополнительное освещение в спальне Ильи"
+
+zwave.toilet_motion_sensor:
+  friendly_name: "Датчик движения в Туалете"
+zwave.toilet_heater_switch_3kw:
+  friendly_name: "Обогреватели в туалете"
+
+zwave.kitchen_corridor_motion:
+  friendly_name: "Датчик движения в коридоре кухни"
+zwave.kitchen_motion:
+  friendly_name: "Датчик движения на кухни"
+
+# HIDDEN
+
+# Fibaro motion sensor at parent room
+sensor.parent_room_motion_sensor_acceleration_x_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_acceleration_y_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_acceleration_z_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_burglar:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_general:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_seismic_intensity:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_sourcenodeid:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro switch heaters at parents room
+
+switch.parent_room_heater_second:
+  homebridge_hidden: true
+  hidden: true
+switch.parent_room_heater_root:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro motion sensor at Arina room
+
+sensor.arina_room_motion_sensor_general:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro switch heaters at Arina room
+
+switch.arina_room_heater_second:
+  homebridge_hidden: true
+  hidden: true
+switch.arina_room_heater_root:
+  homebridge_hidden: true
+  hidden: true
+
+# Shutters at Arina room left
+
+cover.arina_room_shutter_controller_left_switch:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_energy:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_exporting:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_interval:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_current:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_factor:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_previous_reading:
+  homebridge_hidden: true
+  hidden: true
+
+# Shutters at Arina room front
+
+cover.arina_room_shutter_controller_front_switch:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_energy:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_exporting:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_interval:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_current:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_factor:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_previous_reading:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro motion sensor at Ilay room
+
+sensor.ilya_room_motion_sensor_general:
+  homebridge_hidden: true
+  hidden: true
+
+# Shutters at Ilya room
+
+cover.ilya_room_shutter_controller_switch:
+  homebridge_hidden: true
+  hidden: true
+sensor.ilya_room_shutter_controller_energy:
+  homebridge_hidden: true
+  hidden: true
+sensor.ilya_room_shutter_controller_exporting:
+  homebridge_hidden: true
+  hidden: true
+sensor.ilya_room_shutter_controller_power_bak:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro switch heaters at Ilay room
+
+switch.ilya_room_heater_second:
+  homebridge_hidden: true
+  hidden: true
+switch.ilya_room_heater_root:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro RGBW controller at Ilay room
+
+light.ilya_room_light_rgb_blue:
+  homebridge_hidden: true
+  hidden: true
+light.ilya_room_light_rgb_red:
+  homebridge_hidden: true
+  hidden: true
+light.ilya_room_light_rgb_green:
+  homebridge_hidden: true
+  hidden: true
+light.ilya_room_light_rgb_main:
+  hidden: true
+  homebridge_hidden: true
+sensor.ilya_room_light_rgb_energy:
+  hidden: true
+  homebridge_hidden: true
+sensor.ilya_room_light_rgb_exporting:
+  hidden: true
+  homebridge_hidden: true
+sensor.ilya_room_light_rgb_exporting_power_bak:
+  hidden: true
+  homebridge_hidden: true
+
+# Fibaro motion sensor at toilet room
+sensor.toilet_motion_sensor_acceleration_x_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_acceleration_y_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_acceleration_z_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_burglar:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_general:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_seismic_intensity:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_sourcenodeid:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro switch heaters at toilet
+
+switch.toilet_heater_second:
+  homebridge_hidden: true
+  hidden: true
+switch.toilet_heater_root:
+  homebridge_hidden: true
+  hidden: true
+
+
+# Philio motion sensor at kitchen corridor
+
+sensor.kitchen_corridor_motion_sensor_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_corridor_motion_sensor_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_corridor_motion_sensor_burglar:
+  homebridge_hidden: true
+  hidden: true
+sensor.tkitchen_corridor_motion_sourcenodeid:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro motion sensor at kitchen
+sensor.kitchen_motion_sensor_acceleration_x_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_acceleration_y_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_acceleration_z_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_burglar:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_general:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_seismic_intensity:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_sourcenodeid:
+  homebridge_hidden: true
+  hidden: true

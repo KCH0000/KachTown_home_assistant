@@ -7,7 +7,7 @@
         - binary_sensor.guest_toilet_door_sensor
         - binary_sensor.ilya_room_motion
         - binary_sensor.kitchen_motion
-        - binary_sensor.kitcher_corridor_motion
+        - binary_sensor.kitchen_corridor_motion
         - binary_sensor.parent_room_motion
         - binary_sensor.toilet_motion
       to: 'on'

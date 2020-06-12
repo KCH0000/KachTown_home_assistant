@@ -67,7 +67,7 @@
   alias: 'Автоматическое включение света при входе'
   trigger:
     platform: state
-    entity_id: binary_sensor.kitcher_corridor_motion
+    entity_id: binary_sensor.kitchen_corridor_motion
     to: 'on'
   condition:
     - condition: state
@@ -84,7 +84,7 @@
   alias: 'Автоматическое включение света при входе'
   trigger:
     platform: state
-    entity_id: binary_sensor.kitcher_corridor_motion
+    entity_id: binary_sensor.kitchen_corridor_motion
     to: 'off'
     for: 00:03:00
   condition:

@@ -58,8 +58,8 @@ recorder:
   db_url: !secret db_url
 
 #############################################
-vera:
-  vera_controller_url: !secret vera_controller_url
+#vera:
+#  vera_controller_url: !secret vera_controller_url
 #############################################
 device_tracker:
   - platform: google_maps

@@ -113,10 +113,6 @@ switch.garage_gate:
   entity_picture:
   icon: mdi:garage
 
-lock.garage_gate:
-  friendly_name: "Гаражные ворота"
-  homebridge_hidden: false
-
 binary_sensor.workday:
   friendly_name: "Рабочий день"
   homebridge_hidden: false
@@ -288,6 +284,11 @@ cover.kitchen_shutter:
 
 cover.ilya_room_shutter:
   friendly_name: "Жалюзи спальне Ильи"
+  homebridge_hidden: false
+  entity_picture:
+
+cover.garage_gate:
+  friendly_name: "Гаражные ворота"
   homebridge_hidden: false
   entity_picture:
 
@@ -467,6 +468,9 @@ zwave.kitchen_corridor_motion:
   friendly_name: "Датчик движения в коридоре кухни"
 zwave.kitchen_motion:
   friendly_name: "Датчик движения на кухни"
+
+zwave.garage_gate:
+  friendly_name: "Гаражные ворота"
 
 # HIDDEN
 
@@ -717,5 +721,22 @@ sensor.kitchen_motion_sensor_seismic_intensity:
   homebridge_hidden: true
   hidden: true
 sensor.kitchen_motion_sensor_sourcenodeid:
+  homebridge_hidden: true
+  hidden: true
+
+#Aeotec garage door controller
+cover.garage_gate_switch:
+  homebridge_hidden: true
+  hidden: true
+sensor.garage_gate_access_control:
+  homebridge_hidden: true
+  hidden: true
+sensor.garage_gate_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.garage_gate_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.garage_gate_sourcenodeid:
   homebridge_hidden: true
   hidden: true

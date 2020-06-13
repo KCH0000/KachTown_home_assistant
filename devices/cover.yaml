@@ -1,0 +1,6 @@
+- platform: group
+  name: 'windows_covers'
+  entities:
+    - cover.ilya_room_shutter
+    - cover.arina_room_shutter_left
+    - cover.arina_room_shutter_front

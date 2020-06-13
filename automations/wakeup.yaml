@@ -24,3 +24,27 @@
         brightness: 255
         transition: 900
         entity_id: light.ilya_room_light
+
+
+- alias: Shutters close before sunrise
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: "{{ state_attr('sun.sun', 'elevation') }}"
+    above: -2
+  action:
+    service: cover.set_cover_position
+    data:
+      entity_id: cover.windows_covers
+      position: 20
+
+
+- alias: Shutters open at time
+  trigger:
+    platform: time
+    at: "9:30:00"
+  action:
+    service: cover.set_cover_position
+    data:
+      entity_id: cover.windows_covers
+      position: 100

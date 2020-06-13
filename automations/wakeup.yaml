@@ -28,10 +28,9 @@
 
 - alias: Shutters close before sunrise
   trigger:
-    platform: numeric_state
-    entity_id: sun.sun
-    value_template: "{{ state_attr('sun.sun', 'elevation') }}"
-    above: -2
+    - platform: sun
+      event: sunrise
+      offset: '-00:30:00'
   action:
     service: cover.set_cover_position
     data:

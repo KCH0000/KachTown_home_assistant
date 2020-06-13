@@ -6,9 +6,12 @@
       {% set wakeup_string = states('sensor.date') + 'T' + states('input_datetime.daily_wakeup_time') + '+03:00'  %}
       {{ as_timestamp(wakeup_string) - as_timestamp(time_string) | int  == 900 }}
   condition:
-    condition: state
-    entity_id: binary_sensor.workday
-    state: 'on'
+    - condition: state
+      entity_id: binary_sensor.workday
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.enable_wakeup_alarms
+      state: 'on'
   action:
     - service: notify.telegram_family
       data_template:

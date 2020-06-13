@@ -406,6 +406,10 @@ sensor.kitchen_motion_battery_level:
   friendly_name: "Датчик движения на кухни"
   homebridge_hidden: false
 
+sensor.guest_toilet_door_sensor_battery_level:
+  friendly_name: "Датчик открытия двери в туалете"
+  homebridge_hidden: false
+
 # Sensors - Power
 
 sensor.ilya_room_shutter_controller_power:
@@ -459,15 +463,23 @@ zwave.ilay_room_heater_switch_3kw:
 zwave.ilya_room_light_rgb:
   friendly_name: "Дополнительное освещение в спальне Ильи"
 
+
 zwave.toilet_motion_sensor:
   friendly_name: "Датчик движения в Туалете"
 zwave.toilet_heater_switch_3kw:
   friendly_name: "Обогреватели в туалете"
 
+
 zwave.kitchen_corridor_motion:
   friendly_name: "Датчик движения в коридоре кухни"
 zwave.kitchen_motion:
   friendly_name: "Датчик движения на кухни"
+
+
+zwave.guest_toilet_door_sensor:
+  friendly_name: "Датчик открытия двери в гостевом туалете"
+zwave.guest_toilet_light:
+  friendly_name: "Освещение в гостевом туалете"
 
 zwave.garage_gate:
   friendly_name: "Гаражные ворота"
@@ -723,6 +735,28 @@ sensor.kitchen_motion_sensor_seismic_intensity:
 sensor.kitchen_motion_sensor_sourcenodeid:
   homebridge_hidden: true
   hidden: true
+
+
+#Aeotec guest toilet door sensor
+sensor.guest_toilet_door_sensor_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.guest_toilet_door_sensor_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.guest_toilet_door_sensor_burglar:
+  homebridge_hidden: true
+  hidden: true
+sensor.guest_toilet_door_sensor_sourcenodeid:
+  homebridge_hidden: true
+  hidden: true
+sensor.guest_toilet_door_sensor_access_control:
+  homebridge_hidden: true
+  hidden: true
+binary_sensor.guest_toilet_door_sensor_external:
+  homebridge_hidden: true
+  hidden: true
+
 
 #Aeotec garage door controller
 cover.garage_gate_switch:

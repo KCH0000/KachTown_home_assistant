@@ -3,19 +3,9 @@
     guest_toilet_door_sensor:
       friendly_name: "Датчик открытия двери в гостевом туалете"
       device_class: door
-      attribute_templates:
-        device_armed: >
-          {{ state_attr('switch.guest_toilet_door_sensor_armed','device_armed') }}
       value_template: >-
-        {{ state_attr('switch.guest_toilet_door_sensor_armed','device_tripped') == 'True'}}
+        {{ is_state('sensor.guest_toilet_door_sensor_access_control', '22') }}
 
-- platform: template
-  sensors:
-    garage_gate_sensor:
-      friendly_name: "Датчик открытия ворот в гараже"
-      device_class: garage_door
-      value_template: >-
-        {{ is_state('switch.garage_gate','on') }}
 
 - platform: workday
   name: workday

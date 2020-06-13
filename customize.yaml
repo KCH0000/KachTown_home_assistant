@@ -354,6 +354,10 @@ sensor.kitchen_floor_heater_temperature:
   homebridge_hidden: false
   device_class: temperature
 
+sensor.guest_toilet_floor_heater_temperature:
+  friendly_name: "Датчик температуры теплого пола в гостевом туалете"
+  homebridge_hidden: false
+  device_class: temperature
 
 # Sensors - Motion
 binary_sensor.arina_room_motion:
@@ -508,8 +512,20 @@ zwave.guest_toilet_light:
 zwave.guets_toilet_floor_heater:
   friendly_name: "Теплный пол в гостевом туалете"
 
+zwave.boiler_room_water_supply:
+  friendly_name: "Водоснабжение"
+zwave.boiler_room_light_and_heater:
+  friendly_name: "Освещение и отопление в бойлерной"
+
 zwave.garage_gate:
   friendly_name: "Гаражные ворота"
+zwave.garage_light_and_heater:
+  friendly_name: "Освещение и отопление в гараже"
+
+zwave.yard_light_at_garage:
+  friendly_name: "Освещение перед гаражем"
+zwave.street_light:
+  friendly_name: "Освещение общей улицы"
 
 # HIDDEN
 
@@ -889,5 +905,15 @@ sensor.garage_gate_alarm_type:
   homebridge_hidden: true
   hidden: true
 sensor.garage_gate_sourcenodeid:
+  homebridge_hidden: true
+  hidden: true
+
+
+# Fibaro switch heaters at boiler room
+
+switch.boiler_room_water_supply_second:
+  homebridge_hidden: true
+  hidden: true
+switch.boiler_room_water_supply_root:
   homebridge_hidden: true
   hidden: true

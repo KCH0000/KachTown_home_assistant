@@ -433,6 +433,12 @@ sensor.arina_room_shutter_controller_front_power:
 sensor.kitchen_light_power:
   friendly_name: "Освещение на кухне"
 
+sensor.kitchen_tabletop_light_power:
+  friendly_name: "Подсветка столешницы на кухне"
+
+sensor.kitchen_shutter_controller_power:
+  friendly_name: "Жалюзи в на кухне"
+
 # Sensors - Voltage
 
 sensor.arina_room_shutter_controller_left_voltage:
@@ -489,11 +495,18 @@ zwave.kitchen_heater:
   friendly_name: "Отопление на кухне"
 zwave.kitchen_floor_heater:
   friendly_name: "Теплный пол на кухне"
+zwave.kitchen_shutter:
+  friendly_name: "Жалюзи на кухне"
+zwave.kitchen_light_tabletop:
+  friendly_name: "Подсветска столешницы на кухне"
+
 
 zwave.guest_toilet_door_sensor:
   friendly_name: "Датчик открытия двери в гостевом туалете"
 zwave.guest_toilet_light:
   friendly_name: "Освещение в гостевом туалете"
+zwave.guets_toilet_floor_heater:
+  friendly_name: "Теплный пол в гостевом туалете"
 
 zwave.garage_gate:
   friendly_name: "Гаражные ворота"
@@ -774,6 +787,38 @@ sensor.kitchen_rgb_exporting_power_bak:
   homebridge_hidden: true
 
 
+# Fibaro RGBW tabletop controller at kitchen
+
+
+light.kitchen_tabletop_light_rgb_main:
+  hidden: true
+  homebridge_hidden: true
+light.kitchen_tabletop_light_rgb_red:
+  hidden: true
+  homebridge_hidden: true
+light.kitchen_tabletop_light_rgb_green:
+  hidden: true
+  homebridge_hidden: true
+light.kitchen_tabletop_light_rgb_blue:
+  hidden: true
+  homebridge_hidden: true
+light.kitchen_tabletop_light_rgb_white:
+  hidden: true
+  homebridge_hidden: true
+light.kitchen_tabletop_light_rgb_control:
+  hidden: true
+  homebridge_hidden: true
+sensor.kitchen_tabletop_light_rgb_energy:
+  hidden: true
+  homebridge_hidden: true
+sensor.kitchen_tabletop_light_rgb_exporting:
+  hidden: true
+  homebridge_hidden: true
+sensor.kitchen_tabletop_rgb_exporting_power_bak:
+  hidden: true
+  homebridge_hidden: true
+
+
 # Heatit termostat at kitchen
 
 sensor.kitchen_floor_heater_energy:
@@ -782,6 +827,22 @@ sensor.kitchen_floor_heater_energy:
 sensor.kitchen_floor_heater_exporting:
   homebridge_hidden: true
   hidden: true
+
+#Fibaro shutter at kitchen
+
+cover.kitchen_shutter_controller_switch:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_shutter_controller_energy:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_shutter_controller_exporting:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_shutter_controller_power_bak:
+  homebridge_hidden: true
+  hidden: true
+
 
 # Fibaro switch heaters at toilet
 

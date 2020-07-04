@@ -113,6 +113,12 @@ switch.garage_gate:
   entity_picture:
   icon: mdi:garage
 
+switch.yard_pool_pump:
+  friendly_name: "Фильтр бассейна"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:pool
+
 binary_sensor.workday:
   friendly_name: "Рабочий день"
   homebridge_hidden: false
@@ -526,7 +532,8 @@ zwave.yard_light_at_garage:
   friendly_name: "Освещение перед гаражем"
 zwave.street_light:
   friendly_name: "Освещение общей улицы"
-
+zwave.yard_pool_pump:
+  friendly_name: "Фильтр бассейна"
 # HIDDEN
 
 # Fibaro motion sensor at parent room
@@ -915,5 +922,13 @@ switch.boiler_room_water_supply_second:
   homebridge_hidden: true
   hidden: true
 switch.boiler_room_water_supply_root:
+  homebridge_hidden: true
+  hidden: true
+
+switch.yard_pool_pump_main:
+  homebridge_hidden: true
+  hidden: true
+
+switch.yard_pool_second:
   homebridge_hidden: true
   hidden: true

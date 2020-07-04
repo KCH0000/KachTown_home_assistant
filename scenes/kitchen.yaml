@@ -1,5 +1,4 @@
 - name: kitchen_light_off
-  friendly_name: 'Состояние выключеного света на кухне'
   entities:
     light.kitchen_light: off
     light.kitchen_light_second:
@@ -12,7 +11,6 @@
     light.kitchen_light_rgb: off
 
 - name: kitchen_light_half
-  friendly_name: 'Состояние включния света при входе на кухне'
   entities:
     light.kitchen_light: off
     light.kitchen_light_second:
@@ -29,7 +27,6 @@
       brightness: 125
 
 - name: kitchen_light_full
-  friendly_name: 'Состояние полдного света на кухне'
   entities:
     light.kitchen_light:
       state: on
@@ -49,7 +46,6 @@
 
 
 - name: kitchen_light_movie
-  friendly_name: 'Состояние режима КИНО на кухне'
   entities:
     light.kitchen_light: off
     light.kitchen_light_second:
@@ -66,7 +62,6 @@
       brightness: 80
 
 - name: kitchen_light_movie_paused
-  friendly_name: 'Состояние режима КИНО на паузе на кухне'
   entities:
     light.kitchen_light_second:
       state: on
@@ -79,7 +74,6 @@
       brightness: 200
 
 - name: kitchen_light_sleep
-  friendly_name: 'Состояние Ночного режима на кухне'
   entities:
     light.kitchen_light: off
     light.kitchen_light_second: off
@@ -90,7 +84,6 @@
     light.kitchen_light_rgb: off
 
 - name: kitchen_light_day_sleep
-  friendly_name: 'Состояние режима Дневного сна на кухне'
   entities:
     light.kitchen_light: off
     light.kitchen_light_second:

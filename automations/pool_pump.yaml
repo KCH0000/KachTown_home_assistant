@@ -1,0 +1,53 @@
+- id: yard_pool_pump_on
+  alias: 'Включение фильтра бассейна'
+  trigger:
+    - platform: time
+      at: "00:00:00"
+    - platform: time
+      at: "03:00:00"
+    - platform: time
+      at: "06:00:00"
+    - platform: time
+      at: "09:00:00"
+    - platform: time
+      at: "12:00:00"
+    - platform: time
+      at: "15:00:00"
+    - platform: time
+      at: "18:00:00"
+    - platform: time
+      at: "21:00:00"
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.yard_pool_pump
+    - service: notify.telegram_kach
+      data:
+        message: 'Началась фильтрация бассейна'
+
+- id: yard_pool_pump_off
+  alias: 'Выключение фильтра бассейна'
+  trigger:
+    - platform: time
+      at: "02:00:00"
+    - platform: time
+      at: "05:00:00"
+    - platform: time
+      at: "08:00:00"
+    - platform: time
+      at: "11:00:00"
+    - platform: time
+      at: "14:00:00"
+    - platform: time
+      at: "17:00:00"
+    - platform: time
+      at: "20:00:00"
+    - platform: time
+      at: "23:00:00"
+  action:
+    - service: switch.turn_off
+      entity_id:
+        - switch.yard_pool_pump
+    - service: notify.telegram_kach
+      data:
+        message: 'Завершилась фильтрация бассейна'

@@ -3,8 +3,6 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.guest_toilet_door_sensor
-      from: "off"
-      to: "on"
   condition:
     - condition: state
       entity_id: light.guest_toilet_light
@@ -20,10 +18,8 @@
 - id: guets_toilet_light_off
   alias: 'Управление светом в гостевом туалете ВЫКЛ'
   trigger:
-    - platform: state
-      entity_id: binary_sensor.guest_toilet_door_sensor
-      from: "off"
-      to: "on"
+    - platform: template
+      value_template: "{{ (states.sensor.time.last_changed - states.binary_sensor.guest_toilet_door_sensor.last_changed).total_seconds() > 800 }}"
   condition:
     - condition: state
       entity_id: light.guest_toilet_light

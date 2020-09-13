@@ -17,9 +17,9 @@
     - service: switch.turn_on
       entity_id:
         - switch.yard_pool_pump
-    - service: notify.telegram_kach
-      data:
-        message: 'Началась фильтрация бассейна'
+#    - service: notify.telegram_kach
+#      data:
+#        message: 'Началась фильтрация бассейна'
 
 - id: yard_pool_pump_off
   alias: 'Выключение фильтра бассейна'
@@ -40,6 +40,6 @@
     - service: switch.turn_off
       entity_id:
         - switch.yard_pool_pump
-    - service: notify.telegram_kach
-      data:
-        message: 'Завершилась фильтрация бассейна'
+#    - service: notify.telegram_kach
+#      data:
+#        message: 'Завершилась фильтрация бассейна'

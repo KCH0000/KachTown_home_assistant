@@ -34,4 +34,4 @@
     - service: notify.telegram_family
       data:
         title: 'Смена режима'
-        message: 'Привет, кажаные мешки'
+        message: 'Привет, кожаные мешки'

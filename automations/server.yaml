@@ -1,0 +1,35 @@
+- alias: High server load
+  trigger:
+    platform: numeric_state
+    entity_id:
+      - sensor.load_15m
+    above: 4
+  action:
+    - service: notify.telegram_kach
+      data_template:
+        title: "СЕРВЕР"
+        message: "Высокая нагрузка на сервере"
+
+- alias: Low memory
+  trigger:
+    platform: numeric_state
+    entity_id:
+      - sensor.memory_use_percent
+    above: 85
+  action:
+    - service: notify.telegram_kach
+      data_template:
+        title: "СЕРВЕР"
+        message: "Осталось мало оперативной памяти"
+
+- alias: Low disk space
+  trigger:
+    platform: numeric_state
+    entity_id:
+      - sensor.disk_free_media
+    below: 50
+  action:
+    - service: notify.telegram_family
+      data_template:
+        title: "СЕРВЕР"
+        message: "Заканчивается свободное место на сервере"

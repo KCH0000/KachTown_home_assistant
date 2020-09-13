@@ -44,7 +44,7 @@
 - alias: Shutters open at time
   trigger:
     platform: time
-    at: "9:30:00"
+    at: "7:00:00"
   action:
     service: cover.set_cover_position
     data:

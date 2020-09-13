@@ -2,7 +2,7 @@
 homeassistant:
   latitude: !secret latitude
   longitude: !secret longitude
-  elevation: 170
+  elevation: 50
   unit_system: metric
   time_zone: !secret time_zone
   name: KachTown

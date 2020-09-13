@@ -1,0 +1,11 @@
+- alias: Ilya leave school
+  trigger:
+    platform: zone
+    entity_id: person.ilya
+    zone: zone.school
+    # Event is either enter or leave
+    event: leave # or "leave"
+  action:
+    - service: notify.telegram_family
+      data_template:
+        message: "Илья покинул школу"

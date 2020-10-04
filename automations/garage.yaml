@@ -1,0 +1,19 @@
+- id: garage_ligth_manual_turn_on
+  alias: "Включение света в гараже выключателем"
+  trigger:
+    platform: state
+    entity_id: light.boiler_room_light
+    to: 'on'
+  action:
+    - service: light.turn_on
+      entity_id: light.garage_light
+
+- id: garage_ligth_manual_turn_off
+  alias: "Включение света в гараже выключателем"
+  trigger:
+    platform: state
+    entity_id: light.boiler_room_light
+    to: 'off'
+  action:
+    - service: light.turn_off
+      entity_id: light.garage_light

@@ -113,6 +113,18 @@ switch.garage_gate:
   entity_picture:
   icon: mdi:garage
 
+switch.yard_gate_person:
+  friendly_name: "Ворота пешеход"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:gate
+
+switch.yard_gate_full:
+  friendly_name: "Ворота"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:gate
+
 switch.yard_pool_pump:
   friendly_name: "Фильтр бассейна"
   homebridge_hidden: false
@@ -534,6 +546,8 @@ zwave.street_light:
   friendly_name: "Освещение общей улицы"
 zwave.yard_pool_pump:
   friendly_name: "Фильтр бассейна"
+zwave.yard_gate:
+  friendly_name: "Уличные ворота"
 # HIDDEN
 
 # Fibaro motion sensor at parent room

@@ -23,13 +23,7 @@
   sensors:
     anybody_home:
       friendly_name: 'Кто-то дома'
-      entity_id:
-        - sensor.processor_use
       value_template: >
-        {% set ns = namespace(home=false) %}
-        {% for person in states.person %}
-          {% if person.state == 'home' %}
-            {% set ns.home = true %}
-          {% endif %}
-        {% endfor %}
-        {{ ns.home }}
+        {{ is_state('person.kirill', 'home') or
+           is_state('person.ilya', 'home') or
+           is_state('person.valeria', 'home') }}

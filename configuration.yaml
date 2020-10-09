@@ -6,28 +6,26 @@ homeassistant:
   unit_system: metric
   time_zone: !secret time_zone
   name: KachTown
-  whitelist_external_dirs:
+  allowlist_external_dirs:
     - /tmp
   customize: !include customize.yaml
+  internal_url: !secret url_ssl
+  external_url: !secret url_ssl
+
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 python_script:
+
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-#############################################
-#           HTTP config                     #
-#############################################
 http:
     use_x_forwarded_for: true
-#    ssl_certificate: /config/ssl/fullchain.pem
-#    ssl_key: /config/ssl/privkey.pem
     trusted_proxies:
-      - 192.168.112.4
+      - 192.168.10.0/24
       - 127.0.0.1
-      - 192.168.112.1
-      - 172.24.0.4
-# Text to speech
-#tts:
-#  - platform: google_translate
+      - !secret external_ip
+      - 172.19.0.0/16
+      - 172.18.0.0/16
+      - 172.17.0.0/16
 
 # Includes files setting GLOBAL
 group: !include_dir_merge_named group/
@@ -47,11 +45,11 @@ zone: !include zones.yaml
 frontend:
   themes: !include_dir_merge_named themes
 
-
 #############################################
 input_boolean: !include_dir_merge_named inputs/input_boolean/
 input_select: !include_dir_merge_named inputs/input_select/
 input_datetime: !include_dir_merge_named inputs/input_datetime/
+
 #############################################
 scene: !include_dir_merge_list scenes/
 
@@ -60,9 +58,6 @@ config:
 recorder:
   db_url: !secret db_url
 
-#############################################
-#vera:
-#  vera_controller_url: !secret vera_controller_url
 #############################################
 device_tracker:
   - platform: google_maps
@@ -113,9 +108,6 @@ zwave:
   network_key: !secret zwave_network_key
 
 #############################################
-weather:
-  - platform: gismeteo
-
 hacs:
   token: !secret github_token
 

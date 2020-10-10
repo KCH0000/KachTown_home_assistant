@@ -46,7 +46,7 @@
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_light_full
-    - service: scene.turn_on
+    - service: scene.turn_on`
       entity_id: scene.kitchen_shutters_last_state
 
 - id: kitchen_light_auto_off
@@ -95,7 +95,7 @@
       entity_id: input_boolean.kitchen_motion
       state: 'off'
   action:
-    - service: scene.turn_on
+- service: scene.turn_on
       entity_id: scene.kitchen_light_off
 
 - id: kitchen_movie_mode_by_plex_on

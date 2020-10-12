@@ -108,6 +108,14 @@ zwave:
   network_key: !secret zwave_network_key
 
 #############################################
+mqtt:
+  broker: 192.168.10.5
+  port: 1883
+  username: !secret mqtt_user
+  password: !secret mqtt_password
+
+
+#############################################
 hacs:
   token: !secret github_token
 

@@ -135,6 +135,13 @@ binary_sensor.workday:
   friendly_name: "Рабочий день"
   homebridge_hidden: false
 
+switch.septic_tank_current_phase:
+  friendly_name: "Фаза работы серптика септика"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:diving-scuba-tank-multiple
+
+
 # Switches - lights
 switch.street_lights:
   friendly_name: "Свет на улице"

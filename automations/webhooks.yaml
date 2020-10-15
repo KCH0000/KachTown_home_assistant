@@ -3,7 +3,13 @@
   trigger:
     - platform: webhook
       webhook_id: !secret webhook_open_gate_person_merz
+  condition:
+    condition: state
+    entity_id: timer.webhook_yard_gate_timer
+    state: 'idle'
   action:
+    - service: timer.start
+      entity_id: timer.webhook_yard_gate_timer
     - service: notify.telegram_family
       data:
         message: >-

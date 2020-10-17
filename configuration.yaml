@@ -8,7 +8,7 @@ homeassistant:
   name: KachTown
   allowlist_external_dirs:
     - /tmp
-  customize: !include customize.yaml
+  customize: !include_dir_merge_named customize
   internal_url: !secret url_ssl
   external_url: !secret url_ssl
 

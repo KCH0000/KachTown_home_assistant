@@ -1,0 +1,24 @@
+cover.arina_room_shutter_front:
+  friendly_name: "Передние жалюзи в спальне Арины"
+  homebridge_hidden: false
+  entity_picture:
+
+cover.arina_room_shutter_left:
+  friendly_name: "Левые жалюзи в спальне Арины"
+  homebridge_hidden: false
+  entity_picture:
+
+cover.kitchen_shutter:
+  friendly_name: "Жалюзи на кухне"
+  homebridge_hidden: false
+  entity_picture:
+
+cover.ilya_room_shutter:
+  friendly_name: "Жалюзи спальне Ильи"
+  homebridge_hidden: false
+  entity_picture:
+
+cover.garage_gate:
+  friendly_name: "Гаражные ворота"
+  homebridge_hidden: false
+  entity_picture:

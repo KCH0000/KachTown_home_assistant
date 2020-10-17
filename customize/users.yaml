@@ -1,0 +1,7 @@
+device_tracker.google_maps_111529493950114936363:
+       friendly_name: "Валерия" 
+device_tracker.google_maps_114196647749487232514:
+       friendly_name: "Кирилл" 
+device_tracker.kirill_s_oneplus_a5010:
+       homebridge_hidden: true
+       hidden: true

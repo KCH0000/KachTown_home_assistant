@@ -1,0 +1,29 @@
+binary_sensor.arina_room_motion:
+  friendly_name: "Датчик движения в спальне Арины"
+  homebridge_hidden: false
+  device_class: motion
+
+binary_sensor.parent_room_motion:
+  friendly_name: "Датчик движения в спальне родителей"
+  homebridge_hidden: false
+  device_class: motion
+
+binary_sensor.toilet_motion:
+  friendly_name: "Датчик движения в туалете"
+  homebridge_hidden: false
+  device_class: motion
+
+binary_sensor.ilya_room_motion:
+  friendly_name: "Датчик движения в спальне Ильи"
+  homebridge_hidden: false
+  device_class: motion
+
+binary_sensor.kitchen_corridor_motion:
+  friendly_name: "Датчик движения в коридоре кухни"
+  homebridge_hidden: false
+  device_class: motion
+
+binary_sensor.kitchen_motion:
+  friendly_name: "Датчик движения на кухне"
+  homebridge_hidden: false
+  device_class: motion

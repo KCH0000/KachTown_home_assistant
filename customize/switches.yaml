@@ -1,0 +1,106 @@
+switch.boiler_room_heater:
+  friendly_name: "Обогреватель в бойлерной"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+switch.parent_room_heater:
+  friendly_name: "Обогреватель в спальне родителей"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+switch.ilya_room_heater:
+  friendly_name: "Обогреватель в спальне Ильи"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+switch.toilet_heater:
+  friendly_name: "Обогреватель в туалете"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+switch.kitchen_heater:
+  friendly_name: "Обогреватель на кухне"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+switch.arina_room_heater:
+  friendly_name: "Обогреватель спальне Арины"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+switch.garage_heater:
+  friendly_name: "Обогреватель в гараже"
+  homebridge_hidden: false
+  entity_picture: /local/img/themo_glass_panel.jpg
+  icon:
+
+switch.boiler_room_water_supply:
+  friendly_name: "Водоснабжение"
+  homebridge_hidden: false
+  entity_picture: /local/img/water_supply.png
+  icon:
+
+switch.garage_gate:
+  friendly_name: "Гаражные ворота"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:garage
+
+switch.yard_gate_person:
+  friendly_name: "Ворота пешеход"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:gate
+
+switch.yard_gate_full:
+  friendly_name: "Ворота"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:gate
+
+switch.yard_pool_pump:
+  friendly_name: "Фильтр бассейна"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:pool
+
+binary_sensor.workday:
+  friendly_name: "Рабочий день"
+  homebridge_hidden: false
+
+switch.septic_tank_current_phase:
+  friendly_name: "Фаза работы серптика септика"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:diving-scuba-tank-multiple
+
+# Switches - lights
+switch.street_lights:
+  friendly_name: "Свет на улице"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:lightbulb
+
+switch.yard_light_at_garage:
+  friendly_name: "Свет перед гаражом"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:lightbulb
+
+switch.boiler_room_light:
+  friendly_name: "Свет в бойлерной"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:lightbulb
+
+switch.garage_light:
+  friendly_name: "Свет в гараже"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:lightbulb

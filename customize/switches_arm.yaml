@@ -1,0 +1,43 @@
+# Switches - motion sensors
+switch.parent_room_motion_armed:
+  friendly_name: "Датчик движения в спальне родителей"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:motion-sensor
+
+switch.kitchen_corridor_motion_armed:
+  friendly_name: "Датчик движения в коридоре кухни"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:motion-sensor
+
+switch.toilet_motion_armed:
+  friendly_name: "Датчик движения в туалете"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:motion-sensor
+
+switch.kitchen_motion_armed:
+  friendly_name: "Датчик движения на кухне"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:motion-sensor
+
+switch.arina_room_motion_armed:
+  friendly_name: "Датчик движения в спальне Арины"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:motion-sensor
+
+switch.ilya_room_motion_armed:
+  friendly_name: "Датчик движения в спальне Ильи"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:motion-sensor
+
+# Switches - door sensors
+switch.guest_toilet_door_sensor_armed:
+  friendly_name: "Датчик двери в гостевом туалете"
+  homebridge_hidden: false
+  entity_picture:
+  icon: mdi:door-closed

@@ -1,0 +1,396 @@
+# Fibaro motion sensor at parent room
+sensor.parent_room_motion_sensor_acceleration_x_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_acceleration_y_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_acceleration_z_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_burglar:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_general:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_seismic_intensity:
+  homebridge_hidden: true
+  hidden: true
+sensor.parent_room_motion_sensor_sourcenodeid:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro switch heaters at parents room
+
+switch.parent_room_heater_second:
+  homebridge_hidden: true
+  hidden: true
+switch.parent_room_heater_root:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro motion sensor at Arina room
+
+sensor.arina_room_motion_sensor_general:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro switch heaters at Arina room
+
+switch.arina_room_heater_second:
+  homebridge_hidden: true
+  hidden: true
+switch.arina_room_heater_root:
+  homebridge_hidden: true
+  hidden: true
+
+# Shutters at Arina room left
+
+cover.arina_room_shutter_controller_left_switch:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_energy:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_exporting:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_interval:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_current:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_factor:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_left_previous_reading:
+  homebridge_hidden: true
+  hidden: true
+
+# Shutters at Arina room front
+
+cover.arina_room_shutter_controller_front_switch:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_energy:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_exporting:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_interval:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_current:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_factor:
+  homebridge_hidden: true
+  hidden: true
+sensor.arina_room_shutter_controller_front_previous_reading:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro motion sensor at Ilay room
+
+sensor.ilya_room_motion_sensor_general:
+  homebridge_hidden: true
+  hidden: true
+
+# Shutters at Ilya room
+
+cover.ilya_room_shutter_controller_switch:
+  homebridge_hidden: true
+  hidden: true
+sensor.ilya_room_shutter_controller_energy:
+  homebridge_hidden: true
+  hidden: true
+sensor.ilya_room_shutter_controller_exporting:
+  homebridge_hidden: true
+  hidden: true
+sensor.ilya_room_shutter_controller_power_bak:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro switch heaters at Ilay room
+
+switch.ilya_room_heater_second:
+  homebridge_hidden: true
+  hidden: true
+switch.ilya_room_heater_root:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro RGBW controller at Ilay room
+
+light.ilya_room_light_rgb_blue:
+  homebridge_hidden: true
+  hidden: true
+light.ilya_room_light_rgb_red:
+  homebridge_hidden: true
+  hidden: true
+light.ilya_room_light_rgb_green:
+  homebridge_hidden: true
+  hidden: true
+light.ilya_room_light_rgb_main:
+  hidden: true
+  homebridge_hidden: true
+sensor.ilya_room_light_rgb_energy:
+  hidden: true
+  homebridge_hidden: true
+sensor.ilya_room_light_rgb_exporting:
+  hidden: true
+  homebridge_hidden: true
+sensor.ilya_room_light_rgb_exporting_power_bak:
+  hidden: true
+  homebridge_hidden: true
+
+# Fibaro motion sensor at toilet room
+sensor.toilet_motion_sensor_acceleration_x_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_acceleration_y_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_acceleration_z_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_burglar:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_general:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_seismic_intensity:
+  homebridge_hidden: true
+  hidden: true
+sensor.toilet_motion_sensor_sourcenodeid:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro switch heaters at toilet
+
+switch.toilet_heater_second:
+  homebridge_hidden: true
+  hidden: true
+switch.toilet_heater_root:
+  homebridge_hidden: true
+  hidden: true
+
+
+# Philio motion sensor at kitchen corridor
+
+sensor.kitchen_corridor_motion_sensor_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_corridor_motion_sensor_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_corridor_motion_sensor_burglar:
+  homebridge_hidden: true
+  hidden: true
+sensor.tkitchen_corridor_motion_sourcenodeid:
+  homebridge_hidden: true
+  hidden: true
+
+# Fibaro motion sensor at kitchen
+sensor.kitchen_motion_sensor_acceleration_x_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_acceleration_y_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_acceleration_z_axis:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_burglar:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_general:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_seismic_intensity:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_motion_sensor_sourcenodeid:
+  homebridge_hidden: true
+  hidden: true
+
+
+# Fibaro RGBW main controller at kitchen
+
+
+light.kitchen_light_rgb_main:
+  hidden: true
+  homebridge_hidden: true
+light.kitchen_light_rgb_white:
+  hidden: true
+  homebridge_hidden: true
+light.kitchen_light_rgb_control:
+  hidden: true
+  homebridge_hidden: true
+sensor.kitchen_light_rgb_energy:
+  hidden: true
+  homebridge_hidden: true
+sensor.kitchen_light_rgb_exporting:
+  hidden: true
+  homebridge_hidden: true
+sensor.kitchen_rgb_exporting_power_bak:
+  hidden: true
+  homebridge_hidden: true
+
+
+# Fibaro RGBW tabletop controller at kitchen
+
+
+light.kitchen_tabletop_light_rgb_main:
+  hidden: true
+  homebridge_hidden: true
+light.kitchen_tabletop_light_rgb_red:
+  hidden: true
+  homebridge_hidden: true
+light.kitchen_tabletop_light_rgb_green:
+  hidden: true
+  homebridge_hidden: true
+light.kitchen_tabletop_light_rgb_blue:
+  hidden: true
+  homebridge_hidden: true
+light.kitchen_tabletop_light_rgb_white:
+  hidden: true
+  homebridge_hidden: true
+light.kitchen_tabletop_light_rgb_control:
+  hidden: true
+  homebridge_hidden: true
+sensor.kitchen_tabletop_light_rgb_energy:
+  hidden: true
+  homebridge_hidden: true
+sensor.kitchen_tabletop_light_rgb_exporting:
+  hidden: true
+  homebridge_hidden: true
+sensor.kitchen_tabletop_rgb_exporting_power_bak:
+  hidden: true
+  homebridge_hidden: true
+
+
+# Heatit termostat at kitchen
+
+sensor.kitchen_floor_heater_energy:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_floor_heater_exporting:
+  homebridge_hidden: true
+  hidden: true
+
+#Fibaro shutter at kitchen
+
+cover.kitchen_shutter_controller_switch:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_shutter_controller_energy:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_shutter_controller_exporting:
+  homebridge_hidden: true
+  hidden: true
+sensor.kitchen_shutter_controller_power_bak:
+  homebridge_hidden: true
+  hidden: true
+
+
+# Fibaro switch heaters at toilet
+
+switch.kitchen_heater_second:
+  homebridge_hidden: true
+  hidden: true
+switch.kitchen_heater_root:
+  homebridge_hidden: true
+  hidden: true
+
+
+#Aeotec guest toilet door sensor
+sensor.guest_toilet_door_sensor_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.guest_toilet_door_sensor_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.guest_toilet_door_sensor_burglar:
+  homebridge_hidden: true
+  hidden: true
+sensor.guest_toilet_door_sensor_sourcenodeid:
+  homebridge_hidden: true
+  hidden: true
+sensor.guest_toilet_door_sensor_access_control:
+  homebridge_hidden: true
+  hidden: true
+binary_sensor.guest_toilet_door_sensor_external:
+  homebridge_hidden: true
+  hidden: true
+
+
+#Aeotec garage door controller
+cover.garage_gate_switch:
+  homebridge_hidden: true
+  hidden: true
+sensor.garage_gate_access_control:
+  homebridge_hidden: true
+  hidden: true
+sensor.garage_gate_alarm_level:
+  homebridge_hidden: true
+  hidden: true
+sensor.garage_gate_alarm_type:
+  homebridge_hidden: true
+  hidden: true
+sensor.garage_gate_sourcenodeid:
+  homebridge_hidden: true
+  hidden: true
+
+
+# Fibaro switch heaters at boiler room
+
+switch.boiler_room_water_supply_second:
+  homebridge_hidden: true
+  hidden: true
+switch.boiler_room_water_supply_root:
+  homebridge_hidden: true
+  hidden: true
+
+switch.yard_pool_pump_main:
+  homebridge_hidden: true
+  hidden: true
+
+switch.yard_pool_second:
+  homebridge_hidden: true
+  hidden: true

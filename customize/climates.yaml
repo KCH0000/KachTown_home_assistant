@@ -1,0 +1,48 @@
+climate.ilya_room_termostat:
+  friendly_name: "Термостат Илья"
+  hidden: false
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+climate.arina_room_termostat:
+  friendly_name: "Термостат Арина"
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+climate.toilet_termostat:
+  friendly_name: "Термостат Туалет"
+  hidden: false
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+climate.parent_room_termostat:
+  friendly_name: "Термостат Спальня"
+  hidden: false
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+
+climate.kitchen_floor_heater:
+  friendly_name: "Термостат теплого пола на Кухне"
+  hidden: false
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+  hvac_modes:
+    - heat
+    - 'off'
+  fan_modes:
+
+climate.guets_toilet_floor_heater:
+  friendly_name: "Термостат теплого пола в гостевом туалете"
+  hidden: false
+  homebridge_hidden: false
+  entity_picture:
+  icon:
+  hvac_modes:
+    - heat
+    - 'off'
+  fan_modes:

@@ -291,6 +291,22 @@ light.ilya_room_light:
   entity_picture:
   icon:
 
+light.ilya_room_table_lamp:
+  friendly_name: "Настольна лампа"
+  icon: mdi:desk-lamp
+
+light.ilya_room_table_lamp_ambient_light:
+  friendly_name: "Настольна лампа подсветка"
+  icon:   
+
+light.parent_room_table_lamp:
+  friendly_name: "Настольна лампа"
+  icon: mdi:desk-lamp
+
+light.parent_room_table_lamp_ambient_light:
+  friendly_name: "Настольна лампа подсветка"
+  icon: mdi:desk-lamp
+
 # Covers
 cover.arina_room_shutter_front:
   friendly_name: "Передние жалюзи в спальне Арины"

@@ -74,8 +74,8 @@
         data:
           entity_id: switch.boiler_room_light
 
-#- platform: xiaomi_miio
-#  name: 'parent_room_table_lamp'
-#  host: lamp1.xiaomi.kach.su
-#  token: 318c3422d5dbcbe09d9acfeb6618bef3
-#  model: philips.light.sread1
+- platform: xiaomi_miio
+  name: 'parent_room_table_lamp'
+  host: 192.168.10.15
+  token: f1b130a37540ddeb31cbefea26a4ccad
+  model: philips.light.sread1

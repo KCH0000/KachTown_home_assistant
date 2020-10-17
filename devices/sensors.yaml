@@ -10,3 +10,13 @@
   display_options:
     - 'time'
     - 'date'
+
+- platform: template
+  sensors:
+    septic_phase:
+      value_template: >-
+        {% if is_state('switch.septic_tank_current_phase','on') %}
+        pumping
+        {% else %}
+        reverse
+        {% endif %}

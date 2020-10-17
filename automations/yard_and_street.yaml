@@ -25,3 +25,15 @@
     - service: notify.telegram_kach
       data:
         message: 'ВЫКЛ уличное освещение'
+
+- id: yard_septic_phase_changed
+  alias: yard_septic_phase_changed
+  trigger:
+    - platform: state
+      entity_id: sensor.septic_phase
+  action:
+    - service: notify.telegram_kach
+      data_template:
+        title: "Топас"
+        message: >-
+          Смена фазы сепитика на {{ states('sensor.septic_phase') }}

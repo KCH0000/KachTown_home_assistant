@@ -1,0 +1,29 @@
+- alias: On Xiaomi lamp at night
+  trigger:
+    platform: state
+    entity_id: binary_sensor.parent_room_motion
+    to: 'on'
+  condition:
+    condition: time
+    after: '00:30:00'
+    before: '08:00:00'
+  action:
+    service: ligth.turn_on
+    data:
+      entity_id: light.parent_room_table_lamp
+      brightness: 160
+
+- alias: OFF Xiaomi lamp at night
+  trigger:
+    platform: state
+    entity_id: binary_sensor.parent_room_motion
+    to: 'off'
+    for: "00:00:10"
+  condition:
+    condition: time
+    after: '00:30:00'
+    before: '08:00:00'
+  action:
+    service: ligth.turn_off
+    data:
+      entity_id: light.parent_room_table_lamp

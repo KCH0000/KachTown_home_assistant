@@ -76,4 +76,4 @@ zwave.yard_pool_pump:
 zwave.yard_gate:
   friendly_name: "Уличные ворота"
 zwave.yard_septic_sensors:
-  friendly_name: "Освещение и отопление в гараже"
+  friendly_name: "Сенсоры септика"

@@ -64,7 +64,7 @@ light.ilya_room_table_lamp:
 
 light.ilya_room_table_lamp_ambient_light:
   friendly_name: "Настольна лампа подсветка"
-  icon:   
+  icon: mdi:desk-lamp   
 
 light.parent_room_table_lamp:
   friendly_name: "Настольна лампа"

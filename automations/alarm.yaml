@@ -3,17 +3,16 @@
   trigger:
     - platform: state
       entity_id:
-        - binary_sensor.arina_room_motion
-        - binary_sensor.guest_toilet_door_sensor
-        - binary_sensor.ilya_room_motion
-        - binary_sensor.kitchen_motion
-        - binary_sensor.kitchen_corridor_motion
-        - binary_sensor.parent_room_motion
-        - binary_sensor.toilet_motion
+        - binary_sensor.parent_room_motion_safety
+        - binary_sensor.arina_room_motion_safety
+        - binary_sensor.ilya_room_motion_safety
+        - binary_sensor.kitchen_coridor_motion_safety
+        - binary_sensor.kitchen_motion_safety
+        - binary_sensor.toilet_motion_safety
       to: 'on'
   action:
     - condition: template
-      value_template: "{{ trigger.to_state.attributes['device_armed'] }}"
+      value_template: "{{ trigger.to_state.attributes['armed'] }}"
     - service: notify.telegram_family
       data_template:
         title: "**СРАБОТАЛА СИГНАЛИЗАЦИЯ**"
@@ -27,8 +26,10 @@
       from: 'Home'
       to: 'Away'
   action:
-    - service: group.turn_on
+    - service: homeassistant.turn_on
       entity_id: group.alarm_sensors
+    - service: automation.turn_on
+      entity_id: automation.alarm_then_sensor_armed
 
 
 - alias: Auto alarm off by home mode
@@ -38,5 +39,7 @@
         - input_select.home_mode
       to: 'Home'
   action:
-    - service: group.turn_off
+    - service: homeassistant.turn_off
       entity_id: group.alarm_sensors
+    - service: automation.turn_off
+      entity_id: automation.alarm_then_sensor_armed

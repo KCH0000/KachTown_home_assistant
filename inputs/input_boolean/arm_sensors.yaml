@@ -1,0 +1,31 @@
+parent_room_motion_arm:
+  name: "Датчик движения в комнате родителей"
+  icon: mdi:shield-check
+
+arina_room_motion_arm:
+  name: "Датчик движения в комнате Арины"
+  icon: mdi:shield-check
+
+ilya_room_motion_arm:
+  name: "Датчик движения в комнате Ильи"
+  icon: mdi:shield-check
+
+kitchen_coridor_motion_arm:
+  name: "Датчик движения в коридоре кухни"
+  icon: mdi:shield-check
+
+kitchen_motion_arm:
+  name: "Датчик движения на кухне"
+  icon: mdi:shield-check
+
+toilet_motion_arm:
+  name: "Датчик движения в туалете"
+  icon: mdi:shield-check
+
+guest_toilet_door_arm:
+  name: "Датчик двери в гостевом туалете"
+  icon: mdi:shield-check
+
+garage_gate_arm:
+  name: "Датчик двери в гараже"
+  icon: mdi:shield-check

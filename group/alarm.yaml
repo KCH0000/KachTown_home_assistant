@@ -1,11 +1,11 @@
 alarm_sensors:
   name: 'Сигнализация'
   entities:
-    - automation.alarm_then_sensor_armed
-    - switch.arina_room_motion_armed
-    - switch.ilya_room_motion_armed
-    - switch.kitchen_corridor_motion_armed
-    - switch.kitchen_motion_armed
-    - switch.parent_room_motion_armed
-    - switch.toilet_motion_armed
-    - switch.guest_toilet_door_sensor_armed
+    - input_boolean.parent_room_motion_arm
+    - input_boolean.arina_room_motion_arm
+    - input_boolean.ilya_room_motion_arm
+    - input_boolean.kitchen_coridor_motion_arm
+    - input_boolean.kitchen_motion_arm
+    - input_boolean.toilet_motion_arm
+    - input_boolean.guest_toilet_door_arm
+    - input_boolean.garage_gate_arm

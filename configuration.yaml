@@ -32,7 +32,6 @@ group: !include_dir_merge_named group/
 
 automation: !include_dir_merge_list automations/
 
-script: !include scripts.yaml
 climate: !include devices/climates.yaml
 light: !include devices/lights.yaml
 lock: !include devices/locks.yaml
@@ -53,6 +52,7 @@ input_datetime: !include_dir_merge_named inputs/input_datetime/
 
 #############################################
 scene: !include_dir_merge_list scenes/
+script: !include_dir_merge_named scripts/
 
 #############################################
 config:

@@ -1,0 +1,12 @@
+alarm_notify_telegram:
+  description: "Send messege then alarm is triped"
+  fields:
+    title:
+      example: "Alarm"
+    message:
+      example: "Entity"
+  sequence:
+    - service: notify.telegram_family
+      data:
+        title: {{ title }}
+        message: {{ entity_triped }}

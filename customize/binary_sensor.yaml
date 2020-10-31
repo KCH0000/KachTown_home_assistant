@@ -32,3 +32,11 @@ binary_sensor.kitchen_motion:
 binary_sensor.kitchen_flood_sensor:
   friendly_name: "Датчик протечки на кухне"
   device_class: moisture
+
+binary_sensor.guest_toilet_door_sensor:
+  friendly_name: "Датчик открытия двери в гостевом туалете"
+  device_class: door
+
+binary_sensor.boiler_room_door_sensor:
+  friendly_name: "Датчик открытия двери в бойлерную"
+  device_class: door

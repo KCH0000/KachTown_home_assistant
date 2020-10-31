@@ -2,6 +2,7 @@ binary_sensor.arina_room_motion:
   friendly_name: "Датчик движения в спальне Арины"
   homebridge_hidden: false
   device_class: motion
+  armed: input_boolean.test
 
 binary_sensor.parent_room_motion:
   friendly_name: "Датчик движения в спальне родителей"
@@ -27,3 +28,7 @@ binary_sensor.kitchen_motion:
   friendly_name: "Датчик движения на кухне"
   homebridge_hidden: false
   device_class: motion
+
+binary_sensor.kitchen_flood_sensor:
+  friendly_name: "Датчик протечки на кухне"
+  device_class: moisture

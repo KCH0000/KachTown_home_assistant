@@ -64,6 +64,8 @@ sensor.guest_toilet_floor_heater_temperature:
   homebridge_hidden: false
   device_class: temperature
 
+# Sensors battery level
+
 sensor.parent_room_motion_battery_level:
   friendly_name: "Датчик движения в спальне родителей"
   homebridge_hidden: false
@@ -91,6 +93,9 @@ sensor.kitchen_motion_battery_level:
 sensor.guest_toilet_door_sensor_battery_level:
   friendly_name: "Датчик открытия двери в туалете"
   homebridge_hidden: false
+
+sensor.kitchen_flood_sensor_battery_level:
+  friendly_name: "Датчик протечки на кухне"
 
 # Sensors - Power
 

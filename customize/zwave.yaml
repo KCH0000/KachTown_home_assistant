@@ -48,7 +48,8 @@ zwave.kitchen_shutter:
   friendly_name: "Жалюзи на кухне"
 zwave.kitchen_light_tabletop:
   friendly_name: "Подсветска столешницы на кухне"
-
+zwave.kitchen_flood_sensor:
+  friendly_name: "Датчик протечки на кухне"
 
 zwave.guest_toilet_door_sensor:
   friendly_name: "Датчик открытия двери в гостевом туалете"
@@ -61,11 +62,15 @@ zwave.boiler_room_water_supply:
   friendly_name: "Водоснабжение"
 zwave.boiler_room_light_and_heater:
   friendly_name: "Освещение и отопление в бойлерной"
+zwave.boiler_room_door_sensor:
+  friendly_name: "Датчик двери в бойлерной"
 
 zwave.garage_gate:
   friendly_name: "Гаражные ворота"
 zwave.garage_light_and_heater:
   friendly_name: "Освещение и отопление в гараже"
+zwave.garage_motion:
+  friendly_name: "Датчик движения в гараже"
 
 zwave.yard_light_at_garage:
   friendly_name: "Освещение перед гаражем"

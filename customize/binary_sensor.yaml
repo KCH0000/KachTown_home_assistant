@@ -24,6 +24,11 @@ binary_sensor.kitchen_corridor_motion:
   homebridge_hidden: false
   device_class: motion
 
+binary_sensor.garage_motion:
+  friendly_name: "Датчик движения в гараже"
+  homebridge_hidden: false
+  device_class: motion
+
 binary_sensor.kitchen_motion:
   friendly_name: "Датчик движения на кухне"
   homebridge_hidden: false

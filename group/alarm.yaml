@@ -9,3 +9,4 @@ alarm_sensors:
     - input_boolean.toilet_motion_arm
     - input_boolean.guest_toilet_door_arm
     - input_boolean.garage_gate_arm
+    - input_boolean.garage_motion_arm

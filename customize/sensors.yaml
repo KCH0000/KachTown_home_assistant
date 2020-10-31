@@ -28,6 +28,11 @@ sensor.ilya_room_lux:
   homebridge_hidden: false
   device_class: illuminance
 
+sensor.garage_lux:
+  friendly_name: "Датчик света в гараже"
+  homebridge_hidden: false
+  device_class: illuminance
+
 # Sensors - Temperature
 sensor.toilet_termometer_batt:
   friendly_name: "Датчик температуры в туалете"
@@ -98,8 +103,11 @@ sensor.boiler_room_door_sensor_battery_level:
   friendly_name: "Датчик открытия двери в бойлерной"
   homebridge_hidden: false
 
-sensor.kitchen_flood_sensor_battery_level:
+sensor.kitchen_flood_battery_level:
   friendly_name: "Датчик протечки на кухне"
+
+sensor.garage_motion_battery_level:
+  friendly_name: "Датчик движения в гараже"
 
 # Sensors - Power
 

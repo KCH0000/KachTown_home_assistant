@@ -29,3 +29,7 @@ guest_toilet_door_arm:
 garage_gate_arm:
   name: "Датчик двери в гараже"
   icon: mdi:shield-check
+
+garage_motion_arm:
+  name: "Датчик движения в гараже"
+  icon: mdi:shield-check

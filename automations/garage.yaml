@@ -29,3 +29,16 @@
       entity_id: 
         - light.garage_light
         - light.boiler_room_light
+
+- id: garage_and_boiler_ligth_auto_turn_off
+  alias: garage_and_boiler_ligth_auto_turn_off
+  trigger:
+    platform: state
+    entity_id: binary_sensor.garage_motion
+    to: 'on'
+    for: '00:20:00'
+  action:
+    - service: light.turn_off
+      entity_id: 
+        - light.garage_light
+        - light.boiler_room_light

@@ -1,44 +1,36 @@
-- id: garage_ligth_manual_turn_on
-  alias: "Включение света в гараже выключателем"
+- id: garage_and_boiler_auto_turn_on
+  alias: garage_and_boiler_auto_turn_on
   trigger:
-    platform: state
-    entity_id: light.boiler_room_light
-    to: 'on'
-  action:
-    - service: light.turn_on
-      entity_id: light.garage_light
-
-- id: garage_ligth_manual_turn_off
-  alias: "Выключение света в гараже выключателем"
-  trigger:
-    platform: state
-    entity_id: light.boiler_room_light
-    to: 'off'
-  action:
-    - service: light.turn_off
-      entity_id: light.garage_light
-
-- id: garage_and_boiler_ligth_door_sensor_turn_on
-  alias: garage_and_boiler_ligth_door_sensor_turn_on
-  trigger:
-    platform: state
-    entity_id: binary_sensor.boiler_room_door_sensor
-    to: 'on'
-  action:
-    - service: light.turn_on
+    - platform: state
       entity_id: 
-        - light.garage_light
+        - binary_sensor.boiler_room_door_sensor
+        - binary_sensor.garage_motion
         - light.boiler_room_light
+      to: 'on'
+    - platform: state
+      entity_id: cover.garage_gate
+  action:
+    - service: timer.start
+      entity_id: timer.garage_light_off
+    - condition: state
+      entity_id: group.garage_and_boiler_lights
+      state: 'off'  
+    - service: homeassistant.turn_on
+      entity_id: group.garage_and_boiler_lights
+    
 
 - id: garage_and_boiler_ligth_auto_turn_off
   alias: garage_and_boiler_ligth_auto_turn_off
   trigger:
-    platform: state
-    entity_id: binary_sensor.garage_motion
-    to: 'off'
-    for: '00:20:00'
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.garage_light_off
+    - platform: state
+      entity_id: light.boiler_room_light
+      to: 'off' 
   action:
-    - service: light.turn_off
-      entity_id: 
-        - light.garage_light
-        - light.boiler_room_light
+    - service: homeassistant.turn_off
+      entity_id: group.garage_and_boiler_lights
+    - service: timer.cancel
+      entity_id: timer.garage_light_off

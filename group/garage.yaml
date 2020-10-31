@@ -1,0 +1,6 @@
+garage_and_boiler_lights:
+  name: 'Освещение в гараже и бойлерной'
+  entities:
+    - light.garage_light
+    - light.boiler_room_light
+  all: true

@@ -45,7 +45,7 @@
         mdi:shield-off-outline
         {% endif %}
     arina_room_motion_safety:
-      friendly_name: "Движение в спальне"
+      friendly_name: "Движение в спальне Арины"
       device_class: safety
       value_template: "{{ is_state('binary_sensor.arina_room_motion', 'on') }}"
       attribute_templates:
@@ -61,7 +61,7 @@
         mdi:shield-off-outline
         {% endif %}
     ilya_room_motion_safety:
-      friendly_name: "Движение в спальне"
+      friendly_name: "Движение в спальне Ильи"
       device_class: safety
       value_template: "{{ is_state('binary_sensor.ilya_room_motion', 'on') }}"
       attribute_templates:
@@ -77,7 +77,7 @@
         mdi:shield-off-outline
         {% endif %}
     kitchen_coridor_motion_safety:
-      friendly_name: "Движение в спальне"
+      friendly_name: "Движение на кухне в коридоре"
       device_class: safety
       value_template: "{{ is_state('binary_sensor.kitchen_coridor_motion', 'on') }}"
       attribute_templates:
@@ -93,7 +93,7 @@
         mdi:shield-off-outline
         {% endif %}    
     kitchen_motion_safety:
-      friendly_name: "Движение в спальне"
+      friendly_name: "Движение на кухне"
       device_class: safety
       value_template: "{{ is_state('binary_sensor.kitchen_motion', 'on') }}"
       attribute_templates:
@@ -109,7 +109,7 @@
         mdi:shield-off-outline
         {% endif %}
     toilet_motion_safety:
-      friendly_name: "Движение в спальне"
+      friendly_name: "Движение в туалете"
       device_class: safety
       value_template: "{{ is_state('binary_sensor.toilet_motion', 'on') }}"
       attribute_templates:

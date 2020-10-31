@@ -9,6 +9,7 @@
         - binary_sensor.kitchen_coridor_motion_safety
         - binary_sensor.kitchen_motion_safety
         - binary_sensor.toilet_motion_safety
+        - binary_sensor.garage_motion_safety
       to: 'on'
   action:
     - condition: template

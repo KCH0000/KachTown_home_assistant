@@ -1,22 +1,45 @@
 filter:
 #  include_domains:
   include_entities:
+    # Спальян
+    - climate.parent_room_termostat
+    - light.parent_room_table_lamp
+    - sensor.parent_room_termometer_batt
+    # Спальня Арины
     - climate.arina_room_termostat
     - light.arina_room_light
+    # Спальня Ильи
     - light.ilya_room_light
+    # Кухня
     - input_boolean.kitchen_movie_mode
     - input_boolean.kitchen_day_sleep_mode
 #  exclude_entities:
 entity_config:
+  # Спальня
+  climate.parent_room_termostat:
+    name: 'Термостат'
+    room: 'Спальня'
+  light.parent_room_table_lamp:
+    name: 'Лампа'
+    room: 'Спальня'
+  sensor.parent_room_termometer_batt:
+    name: 'Температура'
+    room: 'Спальня'
+    properties:
+      - type: 'temperature'
+
+  # Спальня Арины
   climate.arina_room_termostat:
     name: 'Термостат'
     room: 'Спальня Арины'
   light.arina_room_light:
     name: 'Свет'
     room: 'Спальня Арины'
+  # Спальня Ильи
   light.ilya_room_light:
     name: 'Свет'
     room: 'Спальня Ильи'
+  # Кухня
   input_boolean.kitchen_movie_mode:
     name: 'Режим Кино'
     room: 'Кухня'

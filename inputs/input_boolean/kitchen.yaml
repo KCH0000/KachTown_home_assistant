@@ -12,8 +12,3 @@ kitchen_day_sleep_mode:
   name: 'Режим Дневного сна на кухне'
   initial: false
   icon: mdi:sleep
-
-kitchen_motion:
-  name: 'Движение на кухне'
-  initial: false
-  icon: mdi:motion-sensor

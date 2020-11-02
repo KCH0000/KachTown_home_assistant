@@ -3,3 +3,6 @@ webhook_yard_gate_timer:
 
 garage_light_off:
   duration: '00:10:00'
+
+kitchen_lights_off:
+  duration: '00:20:00'

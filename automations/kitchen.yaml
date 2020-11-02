@@ -1,38 +1,16 @@
-- id: kitchen_long_motion_on
-  alias: 'Обнаружение движения на кухне'
+- alias: kitchen_presence_detect
   trigger:
     platform: state
     entity_id: binary_sensor.kitchen_motion
     to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.kitchen_motion
-      state: 'off'
   action:
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.kitchen_motion
+    - service: timer.start
+      entity_id: timer.kitchen_lights_off
 
-- id: kitchen_long_motion_off
-  alias: 'Обнаружение отсутсвия движения на кухне'
-  trigger:
-    platform: state
-    entity_id: binary_sensor.kitchen_motion
-    to: 'off'
-    for:
-      minutes: 20
-  condition:
-    - condition: state
-      entity_id: input_boolean.kitchen_motion
-      state: 'on'
-  action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.kitchen_motion
-
-- id: kitchen_light_auto_on
-  alias: 'Автоматическое ВКЛючение света'
+- alias: kitchen_light_auto_on
   trigger:
     - platform: state
-      entity_id: input_boolean.kitchen_motion
+      entity_id: binary_sensor.kitchen_presence_detector
       to: 'on'
     - platform: state
       entity_id: group.kitchen_manual_modes
@@ -49,11 +27,10 @@
     - service: scene.turn_on
       entity_id: scene.kitchen_shutters_last_state
 
-- id: kitchen_light_auto_off
-  alias: 'Автоматическое ВЫКЛючение света'
+- alias: kitchen_light_auto_off
   trigger:
     platform: state
-    entity_id: input_boolean.kitchen_motion
+    entity_id: binary_sensor.kitchen_presence_detector
     to: 'off'
   condition:
     - condition: state
@@ -63,8 +40,7 @@
     - service: scene.turn_on
       entity_id: scene.kitchen_light_off
 
-- id: kitchen_light_half_on
-  alias: 'Автоматическое включение света при входе'
+- alias: kitchen_light_half_on
   trigger:
     platform: state
     entity_id: binary_sensor.kitchen_corridor_motion
@@ -74,14 +50,13 @@
       entity_id: group.kitchen_manual_modes
       state: 'off'
     - condition: state
-      entity_id: input_boolean.kitchen_motion
+      entity_id: binary_sensor.kitchen_presence_detector
       state: 'off'
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_light_half
 
-- id: kitchen_light_half_off
-  alias: 'Автоматическое включение света при входе'
+- alias: kitchen_light_half_off
   trigger:
     platform: state
     entity_id: binary_sensor.kitchen_corridor_motion
@@ -92,14 +67,13 @@
       entity_id: group.kitchen_manual_modes
       state: 'off'
     - condition: state
-      entity_id: input_boolean.kitchen_motion
+      entity_id: binary_sensor.kitchen_presence_detector
       state: 'off'
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_light_off
 
-- id: kitchen_movie_mode_by_plex_on
-  alias: 'Включение режима кино через Plex'
+- alias: kitchen_movie_mode_by_plex_on
   trigger:
     - platform: state
       entity_id: media_player.plex_shield_android_tv
@@ -112,8 +86,7 @@
     - service: input_boolean.turn_on
       entity_id: input_boolean.kitchen_movie_mode
 
-- id: kitchen_movie_mode_by_plex_paused
-  alias: 'Пауза режима кино через Plex'
+- alias: kitchen_movie_mode_by_plex_paused
   trigger:
     - platform: state
       entity_id: media_player.plex_shield_android_tv
@@ -131,8 +104,7 @@
             scene.kitchen_light_movie
           {% endif %}
 
-- id: kitchen_movie_mode_by_plex_off
-  alias: 'Включение режима кино через Plex'
+- alias: kitchen_movie_mode_by_plex_off
   trigger:
     - platform: template
       value_template: "{{ state_attr('media_player.nvidia_shield', 'app_id') != 'com.plexapp.android' }}"
@@ -144,8 +116,7 @@
     - service: input_boolean.turn_off
       entity_id: input_boolean.kitchen_movie_mode
 
-- id: kitchen_movie_mode_on
-  alias: 'Ручное включение режима Кино'
+- alias: kitchen_movie_mode_on
   trigger:
     - platform: state
       entity_id: input_boolean.kitchen_movie_mode
@@ -165,8 +136,7 @@
         entity_id: cover.kitchen_shutter
         position: 20
 
-- id: kitchen_movie_mode_off
-  alias: 'Автоматическое выключение режима Кино'
+- alias: kitchen_movie_mode_off
   trigger:
     - platform: state
       entity_id: input_boolean.kitchen_movie_mode
@@ -176,8 +146,7 @@
     - service: input_boolean.turn_off
       entity_id: input_boolean.kitchen_movie_mode
 
-- id: kitchen_day_sleep_mode_on
-  alias: 'Ручное включение режима Дневного Сна'
+- alias: kitchen_day_sleep_mode_on
   trigger:
     platform: state
     entity_id: input_boolean.kitchen_day_sleep_mode
@@ -201,8 +170,7 @@
         entity_id: cover.kitchen_shutter
         position: 40
 
-- id: kitchen_day_sleep_mode_off
-  alias: 'Автоматическое выключение режима Дневго сна'
+- alias: kitchen_day_sleep_mode_off
   trigger:
     platform: state
     entity_id: input_boolean.kitchen_light_day_sleep

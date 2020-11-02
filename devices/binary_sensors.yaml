@@ -26,6 +26,13 @@
            is_state('person.ilya', 'home') or
            is_state('person.valeria', 'home') }}
 
+- platform: template
+  sensors:
+    kitchen_presence_detector:
+      friendly_name: 'Датчик присутсвия на кухне'
+      device_class: 'moving'
+      value_template: "{{ states.timer.kitchen_lights_off.state != 'idle' }}"
+
 - platform: template #Датчики сигнализации
   sensors:
     parent_room_motion_safety:

@@ -28,6 +28,13 @@
 
 - platform: template
   sensors:
+    night_tariff:
+      friendly_name: 'Ночной тариф'
+      value_template: >
+        {{ states('sensor.time') >= '23:00' or states('sensor.time') <= '07:00'  }}
+
+- platform: template
+  sensors:
     kitchen_presence_detector:
       friendly_name: 'Датчик присутсвия на кухне'
       device_class: 'moving'

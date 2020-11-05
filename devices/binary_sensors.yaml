@@ -31,7 +31,7 @@
     night_tariff:
       friendly_name: 'Ночной тариф'
       value_template: >
-        {{ states('sensor.time') >= '23:00' or states('sensor.time') <= '07:00'  }}
+        {{ states('sensor.time') >= '23:00' or states('sensor.time') < '07:00'  }}
 
 - platform: template
   sensors:

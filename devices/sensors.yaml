@@ -15,7 +15,7 @@
   sensors:
     septic_phase:
       value_template: >-
-        {% if states.septic_tank_current_phase.state == 'on' %} 
+        {% if states.switch.septic_tank_current_phase.state == 'on' %} 
         pumping
         {% else %}
         reverse

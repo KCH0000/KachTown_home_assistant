@@ -3,6 +3,11 @@ sensor.toilet_lux:
   homebridge_hidden: false
   device_class: illuminance
 
+sensor.guest_toilet_lux:
+  friendly_name: "Датчик света в гостевом туалете"
+  homebridge_hidden: false
+  device_class: illuminance
+
 sensor.arina_room_lux:
   friendly_name: "Датчик света в спальне Арины"
   homebridge_hidden: false
@@ -39,6 +44,11 @@ sensor.toilet_termometer_batt:
   homebridge_hidden: false
   device_class: temperature
 
+sensor.guest_toilet_termometer_batt:
+  friendly_name: "Датчик температуры в гостевом туалете"
+  homebridge_hidden: false
+  device_class: temperature
+  
 sensor.arina_room_termometer_batt:
   friendly_name: "Датчик температуры в спальне Арины"
   homebridge_hidden: false
@@ -85,6 +95,10 @@ sensor.ilya_room_motion_battery_level:
 
 sensor.toilet_motion_battery_level:
   friendly_name: "Датчик движения в туалете"
+  homebridge_hidden: false
+
+sensor.guest_toilet_motion_battery_level:
+  friendly_name: "Датчик движения в гостевом туалете"
   homebridge_hidden: false
 
 sensor.kitchen_corridor_motion_battery_level:
@@ -139,3 +153,15 @@ sensor.arina_room_shutter_controller_left_voltage:
 
 sensor.arina_room_shutter_controller_front_voltage:
   friendly_name: "Вольтаж жалюзи передние в спальне Арины"
+
+# Sensors - humidity
+sensor.guest_toilet_humidity:
+  friendly_name: "Датчик влажности в гостевом туалете"
+  homebridge_hidden: false
+  device_class: humidity
+
+# Sensors - ultraviolet
+sensor.guest_toilet_uv:
+  friendly_name: "Датчик uv в гостевом туалете"
+  homebridge_hidden: false
+  icon: mdi:emoticon-cool-outline

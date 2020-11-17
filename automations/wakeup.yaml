@@ -34,6 +34,9 @@
     - platform: sun
       event: sunrise
       offset: '-00:50:00'
+  condition:
+    - condition: time
+      before: '07:00:00'
   action:
     service: cover.set_cover_position
     data:
@@ -44,7 +47,7 @@
 - alias: Shutters open at time
   trigger:
     platform: time
-    at: "7:00:00"
+    at: '07:00:00'
   action:
     service: cover.set_cover_position
     data:

@@ -60,13 +60,13 @@ recorder:
   db_url: !secret db_url
 
 #############################################
-device_tracker:
-  - platform: google_maps
-    username: !secret google_home_acc_name
-    max_gps_accuracy: 200
 
 #############################################
 yandex_smart_home: !include devices/yandex_smart_home.yaml
+
+yandex_station:
+  username: !secret yandex_username
+  password: !secret yandex_password
 
 #############################################
 telegram_bot:
@@ -120,3 +120,7 @@ mqtt:
 hacs:
   token: !secret github_token
 
+smartthinq:
+  token: !secret lg_token
+  region: RU
+  language: ru-RU

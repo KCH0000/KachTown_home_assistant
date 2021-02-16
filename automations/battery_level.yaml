@@ -12,6 +12,7 @@
       - sensor.kitchen_flood_sensor_battery_level
       - sensor.boiler_room_door_sensor_battery_level
       - sensor.guest_toilet_motion_battery_level
+      - sensor.kitchen_sofa_motion_battery_level
     below: 10
   action:
     - service: notify.telegram_family

@@ -87,7 +87,7 @@
 - alias: kitchen_movie_mode_by_plex_on
   trigger:
     - platform: state
-      entity_id: media_player.plex_kitchen_tv
+      entity_id: media_player.plex_plex_for_lg_lg_65nano906na
       to: 'playing'
   condition:
     - condition: state
@@ -100,7 +100,7 @@
 - alias: kitchen_movie_mode_by_plex_paused
   trigger:
     - platform: state
-      entity_id: media_player.plex_kitchen_tv
+      entity_id: media_player.plex_plex_for_lg_lg_65nano906na
   condition:
     - condition: state
       entity_id: input_boolean.kitchen_movie_mode
@@ -109,9 +109,9 @@
     - service: scene.turn_on
       data_template:
         entity_id: >
-          {% if is_state('media_player.plex_kitchen_tv', 'paused') %}
+          {% if is_state('media_player.plex_plex_for_lg_lg_65nano906na', 'paused') %}
             scene.kitchen_light_movie_paused
-          {% elif is_state('media_player.plex_kitchen_tv', 'playing') %}
+          {% elif is_state('media_player.plex_plex_for_lg_lg_65nano906na', 'playing') %}
             scene.kitchen_light_movie
           {% endif %}
 
@@ -142,7 +142,7 @@
       to: 'on'
       for: 03:00:00
     - platform: state
-      entity_id: media_player.plex_kitchen_tv
+      entity_id: media_player.plex_plex_for_lg_lg_65nano906na
       to: 'idle'
   action:
     - service: input_boolean.turn_off

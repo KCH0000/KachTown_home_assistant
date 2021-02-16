@@ -87,7 +87,7 @@
 - alias: kitchen_movie_mode_by_plex_on
   trigger:
     - platform: state
-      entity_id: media_player.plex_shield_android_tv
+      entity_id: media_player.plex_kitchen_tv
       to: 'playing'
   condition:
     - condition: state
@@ -100,7 +100,7 @@
 - alias: kitchen_movie_mode_by_plex_paused
   trigger:
     - platform: state
-      entity_id: media_player.plex_shield_android_tv
+      entity_id: media_player.plex_kitchen_tv
   condition:
     - condition: state
       entity_id: input_boolean.kitchen_movie_mode
@@ -109,23 +109,11 @@
     - service: scene.turn_on
       data_template:
         entity_id: >
-          {% if is_state('media_player.plex_shield_android_tv', 'paused') %}
+          {% if is_state('media_player.plex_kitchen_tv', 'paused') %}
             scene.kitchen_light_movie_paused
-          {% elif is_state('media_player.plex_shield_android_tv', 'playing') %}
+          {% elif is_state('media_player.plex_kitchen_tv', 'playing') %}
             scene.kitchen_light_movie
           {% endif %}
-
-- alias: kitchen_movie_mode_by_plex_off
-  trigger:
-    - platform: template
-      value_template: "{{ state_attr('media_player.nvidia_shield', 'app_id') != 'com.plexapp.android' }}"
-  condition:
-    - condition: state
-      entity_id: input_boolean.kitchen_movie_mode
-      state: 'on'
-  action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.kitchen_movie_mode
 
 - alias: kitchen_movie_mode_on
   trigger:
@@ -153,6 +141,9 @@
       entity_id: input_boolean.kitchen_movie_mode
       to: 'on'
       for: 03:00:00
+    - platform: state
+      entity_id: media_player.plex_kitchen_tv
+      to: 'idle'
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.kitchen_movie_mode

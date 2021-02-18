@@ -1,0 +1,25 @@
+- alias: turn off heaters then washer machine work
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.toilet_wacher_machine_current
+    above: 5
+  action:
+    - service: scene.create
+      data:
+        scene_id: termostats_states_wacher_machine_on
+        snapshot_entities:
+        - climate.toilet_termostat
+        - climate.arina_room_termostat
+    - service: climate.turn_off
+      entity_id:
+        - climate.toilet_termostat
+        - climate.arina_room_termostat
+
+- alias: turn on heaters then washer machine complete
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.toilet_wacher_machine_current
+    below: 5
+  action:
+    - service: scene.turn_on
+      entity_id: scene.termostats_states_wacher_machine_on

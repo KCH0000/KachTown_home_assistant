@@ -75,7 +75,7 @@
     platform: state
     entity_id: binary_sensor.kitchen_corridor_motion
     to: 'off'
-    for: 00:03:00
+    for: '00:03:00'
   condition:
     - condition: state
       entity_id: group.kitchen_manual_modes
@@ -98,7 +98,8 @@
       state: 'off'
   action:
     - service: input_boolean.turn_on
-      entity_id: input_boolean.kitchen_movie_mode
+      target:
+        entity_id: input_boolean.kitchen_movie_mode
 
 - alias: kitchen_movie_mode_by_plex_paused
   trigger:
@@ -143,13 +144,14 @@
     - platform: state
       entity_id: input_boolean.kitchen_movie_mode
       to: 'on'
-      for: 03:00:00
+      for: '03:00:00'
     - platform: state
       entity_id: media_player.plex_plex_for_lg_lg_65nano906na
       to: 'idle'
   action:
     - service: input_boolean.turn_off
-      entity_id: input_boolean.kitchen_movie_mode
+      target:  
+        entity_id: input_boolean.kitchen_movie_mode
 
 - alias: kitchen_day_sleep_mode_on
   trigger:
@@ -180,7 +182,8 @@
     platform: state
     entity_id: input_boolean.kitchen_light_day_sleep
     to: 'on'
-    for: 02:00:00
+    for: '02:00:00'
   action:
     - service: input_boolean.turn_off
-      entity_id: input_boolean.kitchen_light_day_sleep
+      target:
+        entity_id: input_boolean.kitchen_light_day_sleep

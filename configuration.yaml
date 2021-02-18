@@ -120,7 +120,13 @@ mqtt:
 hacs:
   token: !secret github_token
 
+  #############################################
 smartthinq:
   token: !secret lg_token
   region: RU
   language: ru-RU
+
+#############################################
+webostv:
+  host: 192.168.10.23
+  name: Kitchen TV

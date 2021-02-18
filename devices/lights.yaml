@@ -85,3 +85,12 @@
   host: 192.168.10.21
   token: c5be8bb80d7f85fa892fa07bf5801976
   model: philips.light.sread1
+
+- platform: group
+  name: Kitchen lights
+  entities:
+    - light.kitchen_light_rgb
+    - light.kitchen_light_second
+    - light.kitchen_light_tabletop
+    - light.kitchen_corridor_light
+    - light.kitchen_light

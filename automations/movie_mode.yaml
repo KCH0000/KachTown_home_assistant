@@ -62,7 +62,10 @@
       entity_id: media_player.plex_plex_for_lg_lg_65nano906na
       to: 'idle'
       for:
-        seconds: 15
+        seconds: 45
+    - platform: state
+      entity_id: media_player.kitchen_tv
+      to: 'off'
   action:
     - service: input_boolean.turn_off
       target:  

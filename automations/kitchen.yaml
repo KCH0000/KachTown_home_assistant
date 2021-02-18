@@ -87,8 +87,6 @@
     - service: scene.turn_on
       entity_id: scene.kitchen_light_off
 
-
-
 - alias: kitchen_day_sleep_mode_on
   trigger:
     platform: state
@@ -97,10 +95,6 @@
   action:
     - service: scene.turn_on
       entity_id: scene.kitchen_light_day_sleep
-    - service: media_player.volume_set
-      data_template:
-        entity_id: media_player.nvidia_shield
-        volume_level: 0.2
     - condition: template
       value_template: "{{ state_attr('sun.sun', 'elevation') > 4 }}"
     - service: scene.create

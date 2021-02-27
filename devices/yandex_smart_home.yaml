@@ -13,6 +13,8 @@ filter:
     # Кухня
     - input_boolean.kitchen_movie_mode
     - input_boolean.kitchen_day_sleep_mode
+    - input_boolean.kitchen_sleep_mode
+    - media_player.kitchen_tv
 #  exclude_entities:
 entity_config:
   # Спальня
@@ -44,5 +46,11 @@ entity_config:
     name: 'Режим Кино'
     room: 'Кухня'
   input_boolean.kitchen_day_sleep_mode:
-    name: 'Режим Дневного Сна'
+    name: 'Режим Сна'
+    room: 'Кухня'
+  input_boolean.kitchen_sleep_mode:
+    name: 'Ночной режим'
+    room: 'Кухня'
+  media_player.kitchen_tv:
+    name: 'Телевизор'
     room: 'Кухня'

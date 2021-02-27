@@ -5,12 +5,11 @@
   min_temp: 15
   max_temp: 26
   away_temp: 15
-  target_temp: 24
   initial_hvac_mode: "heat"
   hot_tolerance: 0
   min_cycle_duration:
     minutes: 5        
-
+  precision: 0.5
 
 - platform: generic_thermostat
   name: ilya_room_termostat
@@ -19,12 +18,11 @@
   min_temp: 15
   max_temp: 26
   away_temp: 15
-  target_temp: 24
   initial_hvac_mode: "heat"
   hot_tolerance: 0
   min_cycle_duration:
     minutes: 5        
-
+  precision: 0.5
 
 - platform: generic_thermostat
   name: toilet_termostat
@@ -33,11 +31,11 @@
   min_temp: 15
   max_temp: 26
   away_temp: 15
-  target_temp: 24
   initial_hvac_mode: "heat"
   hot_tolerance: 0
   min_cycle_duration:
     minutes: 5        
+  precision: 0.5
 
 - platform: generic_thermostat
   name: parent_room_termostat
@@ -46,10 +44,8 @@
   min_temp: 15
   max_temp: 26
   away_temp: 15
-  target_temp: 24
   initial_hvac_mode: "heat"
   hot_tolerance: 0
   min_cycle_duration:
     minutes: 5        
-
-
+  precision: 0.5

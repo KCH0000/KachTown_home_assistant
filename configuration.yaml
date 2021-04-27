@@ -73,6 +73,7 @@ telegram_bot:
   - platform: broadcast
     api_key: !secret telegram_chatbot_api_key 
     allowed_chat_ids:
+      - -487298367 # Грачев
       - 490740136 # kach
       - -1001396494053 #Общий для интернета
       - -1001489548186 #Семейный
@@ -90,6 +91,9 @@ notify:
   - name: telegram_family
     platform: telegram
     chat_id: -1001489548186
+  - name: telegram_grachev
+    platform: telegram
+    chat_id: -487298367
 
 #############################################
 plex:

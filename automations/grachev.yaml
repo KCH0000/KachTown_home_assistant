@@ -1,0 +1,24 @@
+- alias: turn_on_water_pump_grachev
+  trigger:
+    - platform: time
+      at: "20:00:00"
+  action:
+    - service: switch.turn_on
+      entity_id:
+        - switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch
+
+- alias: water_pump_noty_grachev
+  trigger:
+    - platform: state
+      entity_id: switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch
+  action: 
+      - service: notify.telegram_grachev
+        data:
+          title: "Скважина Грачев"
+          message: >-
+            {% if trigger.to_state.state == "on" %}
+              Водокачка включилась
+            {% endif %}
+            {% if trigger.to_state.state == "off" %}
+              Пошла засуха
+            {% endif %}

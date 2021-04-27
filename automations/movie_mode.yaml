@@ -57,7 +57,8 @@
     - platform: state
       entity_id: input_boolean.kitchen_movie_mode
       to: 'on'
-      for: '03:00:00'
+      for: 
+        hours: 3
     - platform: state
       entity_id: media_player.plex_plex_for_lg_lg_65nano906na
       to: 'idle'

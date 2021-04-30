@@ -3,9 +3,22 @@
     - platform: time
       at: "20:00:00"
   action:
+    - service: input_number.increment
+      entity_id: input_number.counter_water_pump_grachev
     - service: switch.turn_on
       entity_id:
         - switch.shenzhen_neo_electronics_co_ltd_power_plug_12a_switch
+    - condition: numeric_state
+      entity_id: input_number.counter_water_pump_grachev
+      above: 13
+    - service: notify.telegram_dev
+      data:
+        message: "Это последний запуск, пока мешки"
+    - service: homeassistant.turn_off
+      entity_id:
+        - automation.turn_on_water_pump_grachev
+        - automation.water_pump_noty_on_grachev
+        - automation.water_pump_noty_off_grachev    
 
 - alias: water_pump_noty_off_grachev
   trigger:

@@ -1,6 +1,8 @@
 yard_night_lights:
   name: 'Ночное уличное освещение'
   entities:
-    - light.street_light
+    - light.street_lights
     - light.yard_light_at_garage
+    - light.besedka_yard_ligthts
+    - light.yard_backlight
   all: true

@@ -1,78 +1,26 @@
-- platform: template
-  lights:
-    garage_light:
-      friendly_name: 'Свет в гараже'
-      value_template: >-
-        {% if is_state('switch.garage_light', 'on') %}
-          on
-        {% else %}
-          off
-        {% endif %}
-      turn_on:
-        service: switch.turn_on
-        data:
-          entity_id: switch.garage_light
-      turn_off:
-        service: switch.turn_off
-        data:
-          entity_id: switch.garage_light
+- platform: switch
+  name: garage_light
+  entity_id: switch.garage_light
 
-- platform: template
-  lights:
-    yard_light_at_garage:
-      friendly_name: 'Свет перед гаражом'
-      value_template: >-
-        {% if is_state('switch.yard_light_at_garage', 'on') %}
-          on
-        {% else %}
-          off
-        {% endif %}
-      turn_on:
-        service: switch.turn_on
-        data:
-          entity_id: switch.yard_light_at_garage
-      turn_off:
-        service: switch.turn_off
-        data:
-          entity_id: switch.yard_light_at_garage
+- platform: switch
+  name: besedka_yard_ligthts
+  entity_id: switch.besedka_yard_ligthts
 
-- platform: template
-  lights:
-    street_light:
-      friendly_name: 'Свет на общей улице'
-      value_template: >-
-        {% if is_state('switch.street_lights', 'on') %}
-          on
-        {% else %}
-          off
-        {% endif %}
-      turn_on:
-        service: switch.turn_on
-        data:
-          entity_id: switch.street_lights
-      turn_off:
-        service: switch.turn_off
-        data:
-          entity_id: switch.street_lights
+- platform: switch
+  name: yard_light_at_garage
+  entity_id: switch.yard_light_at_garage
 
-- platform: template
-  lights:
-    boiler_room_light:
-      friendly_name: 'Свет в бойлерной'
-      value_template: >-
-        {% if is_state('switch.boiler_room_light', 'on') %}
-          on
-        {% else %}
-          off
-        {% endif %}
-      turn_on:
-        service: switch.turn_on
-        data:
-          entity_id: switch.boiler_room_light
-      turn_off:
-        service: switch.turn_off
-        data:
-          entity_id: switch.boiler_room_light
+- platform: switch
+  name: street_lights
+  entity_id: switch.street_lights
+
+- platform: switch
+  name: boiler_room_light
+  entity_id: switch.boiler_room_light
+
+- platform: switch
+  name: yard_backlight
+  entity_id: switch.yard_backlight
 
 - platform: xiaomi_miio
   name: 'parent_room_table_lamp'

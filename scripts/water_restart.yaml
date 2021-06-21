@@ -1,0 +1,22 @@
+restart_water_filters:
+  alias: "Manual restart water filters"
+  mode: single
+  variables:
+    notify_method: notify.telegram_dev
+  sequence:
+    - service: "{{ notify_method }}"
+      data:
+        title: "Водоснабжение"
+        message: "Началась перезагрузка фильтров"
+    - service: switch.turn_off
+      target:
+        entity_id: switch.boiler_room_water_supply
+    - delay:
+        seconds: 40
+    - service: switch.turn_on
+      target:
+        entity_id: switch.boiler_room_water_supply
+    - service: "{{ notify_method }}"
+      data:
+        title: "Водоснабжение"
+        message: "Перезагрузка фильров закончилась"

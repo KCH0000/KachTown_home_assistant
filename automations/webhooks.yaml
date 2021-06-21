@@ -23,3 +23,13 @@
       state: 'Home'
     - service: switch.turn_on
       entity_id: switch.yard_gate_person
+
+- id: restar_water_supply_by_buba
+  alias: "Перезапуск фильтров Бубой"
+  trigger: 
+    - platform: webhook
+      webhook_id: !secret webhook_restart_water_filters_buba
+  action:
+    - service: script.restart_water_filters
+      data: 
+        notify_method: "notify.telegram_buba"

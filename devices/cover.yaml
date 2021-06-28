@@ -1,6 +1,7 @@
 - platform: group
-  name: 'windows_covers'
+  name: 'windows_covers_bedrooms'
   entities:
     - cover.ilya_room_shutter
     - cover.arina_room_shutter_left
     - cover.arina_room_shutter_front
+    - cover.bedroom_shutter

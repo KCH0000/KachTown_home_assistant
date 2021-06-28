@@ -40,16 +40,16 @@
   action:
     service: cover.set_cover_position
     data:
-      entity_id: cover.windows_covers
+      entity_id: cover.windows_covers_bedrooms
       position: 20
 
 
 - alias: Shutters open at time
   trigger:
     platform: time
-    at: '07:00:00'
+    at: '09:00:00'
   action:
     service: cover.set_cover_position
     data:
-      entity_id: cover.windows_covers
+      entity_id: cover.windows_covers_bedrooms
       position: 100

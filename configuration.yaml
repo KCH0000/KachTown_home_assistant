@@ -78,6 +78,8 @@ telegram_bot:
       - -1001396494053 #Общий для интернета
       - -1001489548186 #Семейный
       - -1001246233382 # Dev
+      - -334095822 # Buba
+      
 notify:
   - name: telegram_dev
     platform: telegram
@@ -94,6 +96,9 @@ notify:
   - name: telegram_grachev
     platform: telegram
     chat_id: -487298367
+  - name: telegram_buba
+    platform: telegram
+    chat_id: -334095822
 
 #############################################
 plex:

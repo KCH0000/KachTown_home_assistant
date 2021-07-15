@@ -33,6 +33,7 @@ group: !include_dir_merge_named group/
 automation: !include_dir_merge_list automations/
 
 climate: !include devices/climates.yaml
+switch: !include devices/switches.yaml
 light: !include devices/lights.yaml
 lock: !include devices/locks.yaml
 sensor: !include devices/sensors.yaml
@@ -63,10 +64,6 @@ recorder:
 
 #############################################
 yandex_smart_home: !include devices/yandex_smart_home.yaml
-
-yandex_station:
-  username: !secret yandex_username
-  password: !secret yandex_password
 
 #############################################
 telegram_bot:
@@ -139,3 +136,9 @@ smartthinq:
 webostv:
   host: 192.168.10.23
   name: Kitchen TV
+
+modbus:
+  - name: "Turkov"
+    type: tcp
+    host: 192.168.10.19
+    port: 502

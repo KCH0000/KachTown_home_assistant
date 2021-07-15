@@ -1,5 +1,5 @@
 - platform: group
-  name: 'windows_covers_bedrooms'
+  name: 'bedroom_window_covers'
   entities:
     - cover.ilya_room_shutter
     - cover.arina_room_shutter_left

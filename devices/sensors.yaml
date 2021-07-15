@@ -20,3 +20,39 @@
         {% else %}
         reverse
         {% endif %}
+
+- platform: modbus
+  registers:
+    - name: turkov_inside_temperature
+      hub: Turkov
+      register: 0x102
+      slave: 5
+      register_type: input
+      unit_of_measurement: °C
+      scale: 0.1
+      precision: 1
+    - name: turkov_filter_state
+      hub: Turkov
+      register: 0x106
+      slave: 5
+      register_type: input
+      unit_of_measurement: "%"
+      precision: 1
+    - name: turkov_outside_temperature
+      hub: Turkov
+      register: 0x101
+      slave: 5
+      register_type: input
+      unit_of_measurement: °C
+      scale: 0.1
+      precision: 1
+    - name: turkov_error
+      hub: Turkov
+      register: 0x107
+      slave: 5
+      register_type: input
+    - name: turkov_onoff_state
+      hub: Turkov
+      register: 0x01
+      slave: 5
+      register_type: holding

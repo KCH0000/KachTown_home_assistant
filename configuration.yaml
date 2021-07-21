@@ -142,3 +142,79 @@ modbus:
     type: tcp
     host: 192.168.10.19
     port: 502
+    sensors:
+      - name: turkov_inside_temperature
+        address: 0x102
+        slave: 5
+        input_type: input
+        unit_of_measurement: °C
+        scale: 0.1
+        precision: 1
+      - name: turkov_filter_state
+        address: 0x106
+        slave: 5
+        input_type: input
+        unit_of_measurement: "%"
+        precision: 1
+      - name: turkov_outside_temperature
+        address: 0x101
+        slave: 5
+        input_type: input
+        unit_of_measurement: °C
+        scale: 0.1
+        precision: 1
+      - name: turkov_error
+        address: 0x107
+        slave: 5
+        input_type: input
+      - name: turkov_fans_speed
+        address: 0x03
+        slave: 5
+        input_type: holding
+      - name: turkov_climate_mode
+        address: 0x04
+        slave: 5
+        input_type: holding
+    switches:
+      - name: turkov_vent
+        address: 0x01
+        slave: 5
+        write_type: holding
+        verify:
+            input_type: holding
+            address: 0x01
+            state_on: 1
+            state_off: 0
+
+fan:
+  - platform: template
+    fans:
+      central_ventilation:
+        friendly_name: "Центральная вентиляция"
+        value_template: "{{ states('switch.turkov_vent') }}"
+        preset_mode_template: >
+          {% if is_state('sensor.turkov_climate_mode', '0') %}
+            Normal
+          {% elif is_state('sensor.turkov_climate_mode', '1') %}
+            Heater
+          {% elif is_state('sensor.turkov_climate_mode', '2') %}
+            Cooling
+          {% else %}
+            Normal
+          {% endif %}
+        turn_on:
+          service: switch.turn_on
+          entity_id: switch.turkov_vent
+        turn_off:
+          service: switch.turn_off
+          entity_id: switch.turkov_vent
+        set_preset_mode:
+          service: script.turkov_set_preset_mode
+          data:
+            preset_mode: "{{ preset_mode }}"
+        speed_count: 6
+        preset_modes:
+          - 'Normal'
+          - 'Heater'
+          - 'Cooling'
+          - 'Away'

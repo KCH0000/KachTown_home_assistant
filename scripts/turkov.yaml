@@ -1,0 +1,19 @@
+turkov_set_preset_mode:
+  alias: "Change cental vent mode"
+  mode: single
+  variables:
+    preset_mode: normal
+  sequence:
+    - service: modbus.write_register
+      data_template:
+        hub: Turkov
+        unit: 5
+        address: 0x04
+        value: >
+          {% if preset_mode == 'Heater' %}
+            1
+          {% elif preset_mode == 'Cooling' %}
+            2
+          {% else %}
+            0
+          {% endif %}

@@ -40,7 +40,7 @@
   action:
     service: cover.set_cover_position
     data:
-      entity_id: cover.windows_covers_bedrooms
+      entity_id: cover.bedroom_window_covers
       position: 20
 
 
@@ -51,5 +51,5 @@
   action:
     service: cover.set_cover_position
     data:
-      entity_id: cover.windows_covers_bedrooms
+      entity_id: cover.bedroom_window_covers
       position: 100

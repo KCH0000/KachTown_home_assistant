@@ -2,6 +2,8 @@
   resources:
     - type: disk_free
       arg: /media
+    - type: disk_free
+      arg: /config
     - type: memory_use_percent
     - type: processor_use
     - type: load_15m
@@ -20,3 +22,17 @@
         {% else %}
         reverse
         {% endif %}
+
+- platform: hddtemp
+  host: hddtemp
+  disks:
+    - /dev/sda
+    - /dev/sdd
+    - /dev/sdb
+    - /dev/sdc
+    
+- platform: command_line
+  name: CPU Temperature
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "°C"
+  value_template: "{{ value | multiply(0.001) | round(1) }}"

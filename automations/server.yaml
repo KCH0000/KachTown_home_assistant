@@ -3,7 +3,7 @@
     platform: numeric_state
     entity_id:
       - sensor.load_15m
-    above: 4
+    above: 5
   action:
     - service: notify.telegram_kach
       data_template:
@@ -27,9 +27,37 @@
     platform: numeric_state
     entity_id:
       - sensor.disk_free_media
-    below: 50
+      - sensor.disk_free_config
+    below: 150
   action:
     - service: notify.telegram_family
       data_template:
         title: "СЕРВЕР"
         message: "Заканчивается свободное место на сервере"
+
+- alias: High hdd temperature
+  trigger:
+    platform: numeric_state
+    entity_id:
+      - sensor.hd_temperature_dev_sda
+      - sensor.hd_temperature_dev_sdb
+      - sensor.hd_temperature_dev_sdc
+      - sensor.hd_temperature_dev_sdd
+    above: 50
+  action:
+    - service: notify.telegram_kach
+      data_template:
+        title: "СЕРВЕР"
+        message: "Высокая температура жестких дисков"
+
+- alias: High CPU temperature
+  trigger:
+    platform: numeric_state
+    entity_id:
+      - sensor.cpu_temperature
+    above: 80
+  action:
+    - service: notify.telegram_kach
+      data_template:
+        title: "СЕРВЕР"
+        message: "Высокая температура CPU"

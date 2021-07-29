@@ -59,6 +59,8 @@ script: !include_dir_merge_named scripts/
 config:
 recorder:
   db_url: !secret db_url
+  db_retry_wait: 15
+  purge_keep_days: 30
 
 #############################################
 
@@ -97,15 +99,11 @@ notify:
     platform: telegram
     chat_id: -334095822
 
-#############################################
-plex:
-   host: !secret host
-   port: 32400
-   token: !secret plex_server_token
-
-#############################################
-transmission:
-  host: !secret transmission_host
+# #############################################
+# plex:
+#    host: !secret internal_host
+#    port: 32400
+#    token: !secret plex_server_token
 
 #############################################
 zwave:

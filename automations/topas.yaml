@@ -1,0 +1,11 @@
+- alias: long time topac work
+  trigger:
+    - platform: state
+      entity_id: sensor.septic_phase
+      for:
+        hours: 2
+  action:
+    - service: notify.telegram_family
+      data_template:
+        title: "**КАНАЛИЗАЦИЯ**"
+        message: "Долгая работа фазы {{ trigger.to_state.state }}"

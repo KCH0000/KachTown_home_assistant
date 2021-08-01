@@ -40,6 +40,11 @@
       device_class: 'moving'
       value_template: "{{ states.timer.kitchen_lights_off.state != 'idle' }}"
 
+- platform: mqtt
+  name: garage_presence_detector
+  state_topic: "custom/sensor/garage_presence/status"
+  device_class: motion
+
 - platform: template #Датчики сигнализации
   sensors:
     parent_room_motion_safety:

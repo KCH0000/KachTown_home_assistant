@@ -1,0 +1,40 @@
+- alias: "garage and boiler lights auto on"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.garage_presence_detector
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: group.garage_and_boiler_lights
+      state: 'off'  
+  action:
+    - service: homeassistant.turn_on
+      entity_id: group.garage_and_boiler_lights
+
+- id: garage_and_boiler_ligth_auto_turn_off
+  alias: garage_and_boiler_ligth_auto_turn_off
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.garage_presence_detector
+      to: 'off'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: group.garage_and_boiler_lights
+    - service: timer.cancel
+      entity_id: timer.garage_light_off
+
+- alias: "garage and boiler auto turn on"
+  trigger:
+    - platform: state
+      entity_id: 
+        - binary_sensor.boiler_room_door_sensor
+        - binary_sensor.garage_motion
+        - light.boiler_room_light
+        - cover.garage_gate
+      to: 'on'
+    - platform: state
+      entity_id: cover.garage_gate
+      to: 'open'
+  action:
+    - service: timer.start
+      entity_id: timer.garage_light_off

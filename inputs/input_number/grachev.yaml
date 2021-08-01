@@ -1,5 +1,0 @@
-counter_water_pump_grachev:
-  min: 0
-  max: 14
-  step: 1
-  mode: box

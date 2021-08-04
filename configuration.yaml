@@ -28,32 +28,33 @@ http:
       - 172.17.0.0/16
 
 # Includes files setting GLOBAL
-group: !include_dir_merge_named group/
+group: !include_dir_merge_named group
 
-automation: !include_dir_merge_list automations/
+automation: !include_dir_merge_list automations
 
 climate: !include devices/climates.yaml
-switch: !include_dir_merge_list devices/switches/
+switch: !include_dir_merge_list devices/switches
 light: !include devices/lights.yaml
 lock: !include devices/locks.yaml
-sensor: !include_dir_merge_list devices/sensors/
-binary_sensor: !include_dir_merge_list devices/binary_sensors/
+sensor: !include_dir_merge_list devices/sensors
+binary_sensor: !include_dir_merge_list devices/binary_sensors
 media_player: !include devices/media_players.yaml
 cover: !include devices/cover.yaml
 zone: !include zones.yaml
 timer: !include devices/timers.yaml
+template: !include_dir_merge_list devices/templates
 
 frontend:
   themes: !include_dir_merge_named themes
 
 #############################################
-input_boolean: !include_dir_merge_named inputs/input_boolean/
-input_select: !include_dir_merge_named inputs/input_select/
-input_datetime: !include_dir_merge_named inputs/input_datetime/
-input_number: !include_dir_merge_named inputs/input_number/
+input_boolean: !include_dir_merge_named inputs/input_boolean
+input_select: !include_dir_merge_named inputs/input_select
+input_datetime: !include_dir_merge_named inputs/input_datetime
+input_number: !include_dir_merge_named inputs/input_number
 #############################################
-scene: !include_dir_merge_list scenes/
-script: !include_dir_merge_named scripts/
+scene: !include_dir_merge_list scenes
+script: !include_dir_merge_named scripts
 
 #############################################
 config:

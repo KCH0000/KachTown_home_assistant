@@ -1,0 +1,16 @@
+- trigger:
+  - platform: state
+    entity_id:
+        - binary_sensor.boiler_room_door_sensor
+        - binary_sensor.garage_motion
+        - light.boiler_room_light
+        - cover.garage_gate
+    to: 'on'
+  - platform: state
+    entity_id: cover.garage_gate
+    to: 'open'
+  binary_sensor:
+    - name: garage_presence_detector
+      state: "{{ is_state('binary_sensor.garage_motion', 'on') }}"
+      delay_off:
+        minutes: 10

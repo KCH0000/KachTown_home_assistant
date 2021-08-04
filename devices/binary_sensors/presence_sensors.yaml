@@ -1,9 +1,4 @@
 - platform: mqtt
-  name: garage_presence_detector
-  state_topic: "custom/binary_sensor/garage_presence_detector/status"
-  device_class: moving
-
-- platform: mqtt
   name: kitchen_presence_detector
   state_topic: "custom/binary_sensor/kitchen_presence_detector/status"
   device_class: moving

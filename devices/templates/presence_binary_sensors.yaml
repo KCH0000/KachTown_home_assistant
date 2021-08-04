@@ -1,21 +1,29 @@
 - trigger:
   - platform: state
     entity_id:
-        - binary_sensor.boiler_room_door_sensor
-        - binary_sensor.garage_motion
-        - light.boiler_room_light
-        - cover.garage_gate
+      - binary_sensor.boiler_room_door_sensor
+      - light.boiler_room_light
+      - cover.garage_gate
+      - binary_sensor.garage_motion
     to: 'on'
   - platform: state
     entity_id: cover.garage_gate
     to: 'open'
   binary_sensor:
+    - name: garage_presence_detector_trigger  
+      unique_id: garage_presence_detector_trigger
+      device_class: motion
+      state: true
+      auto_off: 5
+
+- binary_sensor:
     - name: garage_presence_detector
       unique_id: garage_presence_detector
       device_class: motion
-      state: "{{ is_state('binary_sensor.garage_motion', 'on') }}"
+      state: "{{ is_state('binary_sensor.garage_motion', 'on') or 
+                 is_state('binary_sensor.garage_presence_detector_trigger', 'on') }}"
       delay_off:
-        minutes: 10
+        minutes: 5
 
 - binary_sensor: 
     name: kitchen_presence_detector

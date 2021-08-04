@@ -11,6 +11,17 @@
     to: 'open'
   binary_sensor:
     - name: garage_presence_detector
+      unique_id: garage_presence_detector
+      device_class: motion
       state: "{{ is_state('binary_sensor.garage_motion', 'on') }}"
       delay_off:
         minutes: 10
+
+- binary_sensor: 
+    name: kitchen_presence_detector
+    unique_id: kitchen_presence_detector
+    device_class: motion
+    state: "{{ is_state('binary_sensor.kitchen_motion', 'on') or 
+               is_state('binary_sensor.kitchen_sofa_motion', 'on') }}"
+    delay_off:
+      minutes: 20

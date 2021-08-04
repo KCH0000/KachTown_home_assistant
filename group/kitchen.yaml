@@ -1,6 +1,0 @@
-kitchen_manual_modes:
-  name: 'Ручные режимы на кухне'
-  entities:
-    - input_boolean.kitchen_movie_mode
-    - input_boolean.kitchen_sleep_mode
-    - input_boolean.kitchen_day_sleep_mode

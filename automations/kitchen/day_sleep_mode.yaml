@@ -1,0 +1,29 @@
+- alias: kitchen_day_sleep_mode_on
+  trigger:
+    platform: state
+    entity_id: sensor.kitchen_active_mode
+    to: 'day_sleep'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_light_day_sleep
+    - condition: template
+      value_template: "{{ state_attr('sun.sun', 'elevation') > 4 }}"
+    - service: scene.create
+      data:
+        scene_id: kitchen_shutters_last_state
+        snapshot_entities:
+          - cover.kitchen_shutter
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.kitchen_shutter
+        position: 40
+
+- alias: kitchen_day_sleep_mode_off
+  trigger:
+    platform: state
+    entity_id: sensor.kitchen_active_mode
+    to: 'day_sleep'
+    for: '02:00:00'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.kitchen_day_sleep_mode

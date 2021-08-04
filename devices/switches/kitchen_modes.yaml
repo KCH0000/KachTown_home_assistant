@@ -1,0 +1,46 @@
+- platform: template
+  switches:
+    kitchen_movie_mode:
+      friendly_name: "Режим Кино"
+      value_template: "{{ is_state('sensor.kitchen_active_mode', 'movie') }}"
+      turn_on:
+        service: mqtt.publish
+        data:
+          topic: "custom/sensor/kitchen_active_mode/status"
+          payload: "movie"
+      turn_off:
+        service: mqtt.publish
+        data:
+          topic: "custom/sensor/kitchen_active_mode/status"
+          payload: "auto"
+      icon_template: mdi:movie
+
+    kitchen_sleep_mode:
+      friendly_name: "Режим Ночного сна на кухне"
+      value_template: "{{ is_state('sensor.kitchen_active_mode', 'sleep') }}"
+      turn_on:
+        service: mqtt.publish
+        data:
+          topic: "custom/sensor/kitchen_active_mode/status"
+          payload: "sleep"
+      turn_off:
+        service: mqtt.publish
+        data:
+          topic: "custom/sensor/kitchen_active_mode/status"
+          payload: "auto"
+      icon_template: mdi:power-sleep
+
+    kitchen_day_sleep_mode:
+      friendly_name: "Режим Дневного сна на кухне"
+      value_template: "{{ is_state('sensor.kitchen_active_mode', 'day_sleep') }}"
+      turn_on:
+        service: mqtt.publish
+        data:
+          topic: "custom/sensor/kitchen_active_mode/status"
+          payload: "day_sleep"
+      turn_off:
+        service: mqtt.publish
+        data:
+          topic: "custom/sensor/kitchen_active_mode/status"
+          payload: "auto"
+      icon_template: mdi:sleep

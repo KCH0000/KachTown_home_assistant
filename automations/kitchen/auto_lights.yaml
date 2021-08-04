@@ -1,0 +1,63 @@
+- alias: kitchen_light_auto_on
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.kitchen_presence_detector
+      to: 'on'
+    - platform: state
+      entity_id: sensor.kitchen_active_mode
+      to: 'auto'
+  condition:
+    - condition: state
+      entity_id: sensor.kitchen_active_mode
+      state: 'auto'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_light_full
+    - service: scene.turn_on
+      entity_id: scene.kitchen_shutters_last_state
+
+- alias: kitchen_light_auto_off
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kitchen_presence_detector
+    to: 'off'
+  condition:
+    - condition: state
+      entity_id: sensor.kitchen_active_mode
+      state: 'auto'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_light_off
+
+- alias: kitchen_light_half_on
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kitchen_corridor_motion
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: sensor.kitchen_active_mode
+      state: 'auto'
+    - condition: state
+      entity_id: binary_sensor.kitchen_presence_detector
+      state: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_light_half
+
+- alias: kitchen_light_half_off
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kitchen_corridor_motion
+    to: 'off'
+    for: '00:03:00'
+  condition:
+    - condition: state
+      entity_id: sensor.kitchen_active_mode
+      state: 'auto'
+    - condition: state
+      entity_id: binary_sensor.kitchen_presence_detector
+      state: 'off'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.kitchen_light_off

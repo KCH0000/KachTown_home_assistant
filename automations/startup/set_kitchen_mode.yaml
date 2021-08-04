@@ -1,0 +1,18 @@
+- alias: 'Set theme at startup'
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    service: mqtt.publish
+    data:
+      topic: custom/sensor/kitchen_active_mode/
+      payload: >
+        {% if is_state('switch.kitchen_movie_mode', 'on') %}
+          movie
+        {% elif is_state('switch.kitchen_sleep_mode', 'on') %}
+          sleep
+        {% elif is_state('switch.kitchen_day_sleep_mode', 'on') %}
+          day_sleep
+        {% else %}
+          auto
+        {% endif %} 

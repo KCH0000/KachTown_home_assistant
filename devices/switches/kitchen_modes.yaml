@@ -6,12 +6,12 @@
       turn_on:
         service: mqtt.publish
         data:
-          topic: "custom/sensor/kitchen_active_mode/status"
+          topic: "custom/sensor/kitchen_active_mode/"
           payload: "movie"
       turn_off:
         service: mqtt.publish
         data:
-          topic: "custom/sensor/kitchen_active_mode/status"
+          topic: "custom/sensor/kitchen_active_mode/"
           payload: "auto"
       icon_template: mdi:movie
 
@@ -21,12 +21,12 @@
       turn_on:
         service: mqtt.publish
         data:
-          topic: "custom/sensor/kitchen_active_mode/status"
+          topic: "custom/sensor/kitchen_active_mode/"
           payload: "sleep"
       turn_off:
         service: mqtt.publish
         data:
-          topic: "custom/sensor/kitchen_active_mode/status"
+          topic: "custom/sensor/kitchen_active_mode/"
           payload: "auto"
       icon_template: mdi:power-sleep
 
@@ -36,11 +36,11 @@
       turn_on:
         service: mqtt.publish
         data:
-          topic: "custom/sensor/kitchen_active_mode/status"
+          topic: "custom/sensor/kitchen_active_mode/"
           payload: "day_sleep"
       turn_off:
         service: mqtt.publish
         data:
-          topic: "custom/sensor/kitchen_active_mode/status"
+          topic: "custom/sensor/kitchen_active_mode/"
           payload: "auto"
       icon_template: mdi:sleep

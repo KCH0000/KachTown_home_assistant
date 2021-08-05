@@ -1,0 +1,9 @@
+- trigger:
+  - platform: webhook
+    webhook_id: !secret webhook_open_gate_person_merz
+  binary_sensor:
+    name: merzlyakov_opening_gate
+    unique_id: merzlyakov_opening_gate
+    icon: mdi:gate
+    state: true
+    auto_off: 10

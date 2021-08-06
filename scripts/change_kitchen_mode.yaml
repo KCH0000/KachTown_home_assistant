@@ -1,0 +1,12 @@
+change_kitchen_mode:
+  alias: "Change kitchen mode"
+  mode: single
+  variables:
+    mode: auto
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "custom/sensor/kitchen_active_mode/"
+        payload: "{{ mode | lower }}"
+        qos: 2
+        retain: true

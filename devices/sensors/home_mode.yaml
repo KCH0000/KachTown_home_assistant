@@ -1,0 +1,4 @@
+- platform: mqtt
+  name: home_mode
+  state_topic: "custom/sensor/home_mode/"
+  icon: mdi:home

@@ -1,0 +1,40 @@
+- platform: template
+  switches:
+    activate_mode_home:
+      unique_id: activate_mode_home
+      value_template: "{{ is_state('sensor.home_mode', 'home') }}"
+      turn_on:
+        - service: script.change_home_mode
+          data:
+            mode: 'home'
+      turn_off:
+        - service: script.change_home_mode
+          data:
+            mode: 'home'
+      icon_template: mdi:home
+
+    activate_away_home:
+      unique_id: activate_away_home
+      value_template: "{{ is_state('sensor.home_mode', 'away') }}"
+      turn_on:
+        - service: script.change_home_mode
+          data:
+            mode: 'away'
+      turn_off:
+        - service: script.change_home_mode
+          data:
+            mode: 'away'
+      icon_template: mdi:office-building
+
+    activate_vacation_home:
+      unique_id: activate_vacation_home
+      value_template: "{{ is_state('sensor.home_mode', 'vacation') }}"
+      turn_on:
+        - service: script.change_home_mode
+          data:
+            mode: 'vacation'
+      turn_off:
+        - service: script.change_home_mode
+          data:
+            mode: 'vacation'
+      icon_template: mdi:airplane

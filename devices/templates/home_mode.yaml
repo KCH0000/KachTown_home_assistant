@@ -1,4 +1,0 @@
-- sensor:
-  - name: home_mode
-    unique_id: home_mode
-    state: "{{ states('input_select.home_mode') | string }}"

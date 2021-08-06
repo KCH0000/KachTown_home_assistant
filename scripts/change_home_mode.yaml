@@ -4,7 +4,9 @@ change_home_mode:
   variables:
     mode: home
   sequence:
-    - service: input_select.select_option
+    - service: mqtt.publish
       data:
-        entity_id: input_select.home_mode
-        option: "{{ mode | lower }}"
+        topic: "custom/sensor/home_mode/"
+        payload: "{{ mode | lower }}"
+        qos: 2
+        retain: true

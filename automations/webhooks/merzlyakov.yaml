@@ -9,13 +9,13 @@
     - service: notify.telegram_family
       data:
         message: >-
-         {% if is_state('input_select.home_mode', 'home') %}
+         {% if is_state('sensor.home_mode', 'home') %}
           Мерзляковы открыли ворота
          {% else %}
           Мерзляковы пытались открыть ворота
          {% endif %}
     - condition: state
-      entity_id: input_select.home_mode
+      entity_id: sensor.home_mode
       state: 'home'
     - service: switch.turn_on
       entity_id: switch.yard_gate_person

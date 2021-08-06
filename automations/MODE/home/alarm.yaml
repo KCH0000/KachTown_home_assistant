@@ -1,0 +1,11 @@
+- alias: Auto alarm off by home mode
+  trigger:
+    - platform: state
+      entity_id:
+        - sensor.home_mode
+      to: 'home'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: group.alarm_sensors
+    - service: automation.turn_off
+      entity_id: automation.alarm_then_motion

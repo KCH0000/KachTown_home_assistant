@@ -1,0 +1,18 @@
+- alias: auto_away_mode_on
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.anybody_home
+      from: 'on'
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: sensor.home_mode
+      state: 'home'
+  action:
+    - service: script.change_home_mode
+      data:
+        mode: 'away'
+    - service: notify.telegram_family
+      data:
+        title: 'Смена режима'
+        message: 'Все меня покинули'

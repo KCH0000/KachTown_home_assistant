@@ -1,0 +1,14 @@
+- alias: auto_home_mode_on
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.anybody_home
+      from: 'off'
+      to: 'on'
+  action:
+    - service: script.change_home_mode
+      data:
+        mode: 'home'
+    - service: notify.telegram_family
+      data:
+        title: 'Смена режима'
+        message: 'Привет, кожаные мешки'

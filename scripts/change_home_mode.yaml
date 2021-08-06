@@ -1,0 +1,10 @@
+change_home_mode:
+  alias: "Change home mode"
+  mode: single
+  variables:
+    mode: home
+  sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_mode
+        option: "{{ mode | lower }}"

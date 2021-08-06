@@ -1,0 +1,70 @@
+- binary_sensor:
+  - name: parent_room_motion_safety
+    unique_id: parent_room_motion_safety
+    device_class: safety
+    state: "{{ is_state('binary_sensor.parent_room_motion', 'on') and
+                is_state('input_boolean.parent_room_motion_arm', 'on') }}"
+    attributes:
+      armed: "{{ is_state('input_boolean.parent_room_motion_arm', 'on') }}"
+    delay_off:
+      minutes: 2
+
+  - name: arina_room_motion_safety
+    unique_id: arina_room_motion_safety
+    device_class: safety
+    state: "{{ is_state('binary_sensor.arina_room_motion', 'on') and
+                is_state('input_boolean.arina_room_motion_arm', 'on') }}"
+    attributes:
+      armed: "{{ is_state('input_boolean.arina_room_motion_arm', 'on') }}"
+    delay_off:
+      minutes: 2
+
+  - name: ilya_room_motion_safety
+    unique_id: ilya_room_motion_safety
+    device_class: safety
+    state: "{{ is_state('binary_sensor.ilya_room_motion', 'on') and
+                is_state('input_boolean.ilya_room_motion_arm', 'on') }}"
+    attributes:
+      armed: "{{ is_state('input_boolean.ilya_room_motion_arm', 'on') }}"
+    delay_off:
+      minutes: 2
+
+  - name: kitchen_coridor_motion_safety
+    unique_id: kitchen_coridor_motion_safety
+    device_class: safety
+    state: "{{ is_state('binary_sensor.kitchen_coridor_motion', 'on') and
+                is_state('input_boolean.kitchen_coridor_motion_arm', 'on') }}"
+    attributes:
+      armed: "{{ is_state('input_boolean.kitchen_coridor_motion_arm', 'on') }}"
+    delay_off:
+      minutes: 2
+
+  - name: kitchen_motion_safety
+    unique_id: kitchen_motion_safety
+    device_class: safety
+    state: "{{ is_state('binary_sensor.kitchen_motion', 'on') and
+                is_state('input_boolean.kitchen_motion_arm', 'on') }}"
+    attributes:
+      armed: "{{ is_state('input_boolean.kitchen_motion_arm', 'on') }}"
+    delay_off:
+      minutes: 2
+
+  - name: toilet_motion_safety
+    unique_id: toilet_motion_safety
+    device_class: safety
+    state: "{{ is_state('binary_sensor.toilet_motion', 'on') and
+                is_state('input_boolean.toilet_motion_arm', 'on') }}"
+    attributes:
+      armed: "{{ is_state('input_boolean.toilet_motion_arm', 'on') }}"
+    delay_off:
+      minutes: 2
+
+  - name: garage_motion_safety
+    unique_id: garage_motion_safety
+    device_class: safety
+    state: "{{ is_state('binary_sensor.garage_motion', 'on') and
+                is_state('input_boolean.garage_motion_arm', 'on') }}"
+    attributes:
+      armed: "{{ is_state('input_boolean.garage_motion_arm', 'on') }}"
+    delay_off:
+      minutes: 2

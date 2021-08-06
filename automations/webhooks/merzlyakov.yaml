@@ -2,20 +2,20 @@
   alias: "Открыть ворота для Мерзляковых"
   trigger:
     - platform: state
-      entity_id: 
+      entity_id:
         - binary_sensor.merzlyakov_opening_gate
       to: 'on'
   action:
     - service: notify.telegram_family
       data:
         message: >-
-         {% if is_state('input_select.home_mode', 'Home') %}
+         {% if is_state('input_select.home_mode', 'home') %}
           Мерзляковы открыли ворота
          {% else %}
           Мерзляковы пытались открыть ворота
          {% endif %}
     - condition: state
       entity_id: input_select.home_mode
-      state: 'Home'
+      state: 'home'
     - service: switch.turn_on
       entity_id: switch.yard_gate_person

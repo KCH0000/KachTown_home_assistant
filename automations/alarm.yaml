@@ -1,0 +1,8 @@
+- alias: toggle_alarm_by_group
+  trigger:
+    - platform: state
+      entity_id: group.alarm_sensors
+  action:
+    - service: script.toggle_alarm
+      data:
+        action: "{{ trigger.to_state.state }}"

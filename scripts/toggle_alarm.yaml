@@ -1,0 +1,13 @@
+toggle_alarm:
+  alias: 'Переключение сигнализации'
+  mode: single
+  variables:
+    action: 'off'
+  sequence:
+    - service: "{{ 'automation.turn_' ~ action }}"
+      entity_id: automation.alarm_then_motion
+    - condition: state
+      entity_id: group.alarm_sensors
+      state: "{{ action }}"
+    - service: "{{ 'homeassistant.turn_' ~ action }}"
+      entity_id: group.alarm_sensors

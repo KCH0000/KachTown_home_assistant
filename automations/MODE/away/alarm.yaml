@@ -5,7 +5,6 @@
         - sensor.home_mode
       to: 'away'
   action:
-    - service: homeassistant.turn_on
-      entity_id: group.alarm_sensors
-    - service: automation.turn_on
-      entity_id: automation.alarm_then_motion
+    - service: script.toggle_alarm
+      data:
+        action: 'on'

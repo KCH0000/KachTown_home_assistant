@@ -48,7 +48,7 @@ sensor.guest_toilet_termometer_batt:
   friendly_name: "Датчик температуры в гостевом туалете"
   homebridge_hidden: false
   device_class: temperature
-  
+
 sensor.arina_room_termometer_batt:
   friendly_name: "Датчик температуры в спальне Арины"
   homebridge_hidden: false

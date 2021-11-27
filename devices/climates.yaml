@@ -1,51 +1,51 @@
 - platform: generic_thermostat
-  name: arina_room_termostat 
+  name: arina_room_termostat
   heater: switch.arina_room_heater
-  target_sensor: sensor.arina_room_termometer_batt
+  target_sensor: sensor.arina_room_motion_air_temperature
   min_temp: 15
   max_temp: 26
   away_temp: 15
   initial_hvac_mode: "heat"
   hot_tolerance: 0
   min_cycle_duration:
-    minutes: 5        
+    minutes: 5
   precision: 0.5
 
 - platform: generic_thermostat
   name: ilya_room_termostat
   heater: switch.ilya_room_heater
-  target_sensor: sensor.ilya_room_termometer_batt
+  target_sensor: sensor.ilya_room_motion_air_temperature
   min_temp: 15
   max_temp: 26
   away_temp: 15
   initial_hvac_mode: "heat"
   hot_tolerance: 0
   min_cycle_duration:
-    minutes: 5        
+    minutes: 5
   precision: 0.5
 
 - platform: generic_thermostat
   name: toilet_termostat
   heater: switch.toilet_heater
-  target_sensor: sensor.toilet_termometer_batt
+  target_sensor: sensor.toilet_motion_air_temperature
   min_temp: 15
   max_temp: 26
   away_temp: 15
   initial_hvac_mode: "heat"
   hot_tolerance: 0
   min_cycle_duration:
-    minutes: 5        
+    minutes: 5
   precision: 0.5
 
 - platform: generic_thermostat
   name: parent_room_termostat
   heater: switch.parent_room_heater
-  target_sensor: sensor.parent_room_termometer_batt
+  target_sensor: sensor.parent_room_motion_air_temperature
   min_temp: 15
   max_temp: 26
   away_temp: 15
   initial_hvac_mode: "heat"
   hot_tolerance: 0
   min_cycle_duration:
-    minutes: 5        
+    minutes: 5
   precision: 0.5

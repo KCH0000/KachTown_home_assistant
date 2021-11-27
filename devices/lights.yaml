@@ -22,17 +22,13 @@
   name: yard_backlight
   entity_id: switch.yard_backlight
 
-# - platform: xiaomi_miio
-#   name: 'parent_room_table_lamp'
-#   host: 192.168.10.15
-#   token: f1b130a37540ddeb31cbefea26a4ccad
-#   model: philips.light.sread1
+- platform: switch
+  name: parent_room_light
+  entity_id: switch.parent_room_light
 
-# - platform: xiaomi_miio
-#   name: 'ilya_room_table_lamp'
-#   host: 192.168.10.21
-#   token: c5be8bb80d7f85fa892fa07bf5801976
-#   model: philips.light.sread1
+- platform: switch
+  name: second_floor_coridor_light
+  entity_id: switch.second_floor_coridor_light
 
 - platform: group
   name: Kitchen lights

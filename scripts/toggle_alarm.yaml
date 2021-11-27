@@ -6,8 +6,5 @@ toggle_alarm:
   sequence:
     - service: "{{ 'automation.turn_' ~ action }}"
       entity_id: automation.alarm_then_motion
-    - condition: state
-      entity_id: group.alarm_sensors
-      state: "{{ action }}"
     - service: "{{ 'homeassistant.turn_' ~ action }}"
       entity_id: group.alarm_sensors

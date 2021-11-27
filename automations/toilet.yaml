@@ -1,7 +1,7 @@
 - alias: turn off heaters then washer machine work
   trigger:
     platform: numeric_state
-    entity_id: sensor.toilet_wacher_machine_current
+    entity_id: sensor.toilet_washer_mashine_plug_electric_consumption_a
     above: 5
   action:
     - service: scene.create
@@ -18,7 +18,7 @@
 - alias: turn on heaters then washer machine complete
   trigger:
     platform: numeric_state
-    entity_id: sensor.toilet_wacher_machine_current
+    entity_id: sensor.toilet_washer_mashine_plug_electric_consumption_a
     below: 5
   action:
     - service: scene.turn_on

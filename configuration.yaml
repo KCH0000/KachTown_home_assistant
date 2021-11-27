@@ -60,18 +60,18 @@ script: !include_dir_merge_named scripts
 config:
 recorder:
   db_url: !secret db_url
-  db_retry_wait: 15
+  db_retry_wait: 30
   purge_keep_days: 30
 
 #############################################
 
 #############################################
-yandex_smart_home: !include devices/yandex_smart_home.yaml
+# yandex_smart_home: !include devices/yandex_smart_home.yaml
 
 #############################################
 telegram_bot:
   - platform: broadcast
-    api_key: !secret telegram_chatbot_api_key 
+    api_key: !secret telegram_chatbot_api_key
     allowed_chat_ids:
       - -487298367 # Грачев
       - 490740136 # kach
@@ -79,7 +79,7 @@ telegram_bot:
       - -1001489548186 #Семейный
       - -1001246233382 # Dev
       - -334095822 # Buba
-      
+
 notify:
   - name: telegram_dev
     platform: telegram
@@ -100,18 +100,6 @@ notify:
     platform: telegram
     chat_id: -334095822
 
-# #############################################
-# plex:
-#    host: !secret internal_host
-#    port: 32400
-#    token: !secret plex_server_token
-
-#############################################
-zwave:
-  usb_path: /dev/ttyACM0
-  device_config: !include zwave/device_config.yaml
-  polling_interval: 3600000
-  network_key: !secret zwave_network_key
 
 #############################################
 mqtt:
@@ -217,3 +205,14 @@ fan:
           - 'Heater'
           - 'Cooling'
           - 'Away'
+
+# camera:
+#   - platform: ffmpeg
+#     # still_image_url: http://172.16.55.107:8899/
+#     input: "rtsp://172.16.55.107:554/user=user_password=1234_channel=1_stream=0.sdp?real_stream"
+#     # extra_arguments: "-q:v 3"
+#     name: Magistre_cam
+#     # username: user
+#     # password: 1234
+#     # verify_ssl: false
+#     # rtsp_transport: tcp

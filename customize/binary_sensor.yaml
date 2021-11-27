@@ -13,7 +13,7 @@ binary_sensor.toilet_motion:
   friendly_name: "Датчик движения в туалете"
   homebridge_hidden: false
   device_class: motion
-  
+
 binary_sensor.guest_toilet_motion:
   friendly_name: "Датчик движения в гостевом туалете"
   homebridge_hidden: false

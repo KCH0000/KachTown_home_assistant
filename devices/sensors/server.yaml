@@ -17,7 +17,7 @@
   sensors:
     septic_phase:
       value_template: >-
-        {% if states.switch.septic_tank_current_phase.state == 'on' %} 
+        {% if states.switch.septic_tank_current_phase.state == 'on' %}
         pumping
         {% else %}
         reverse
@@ -30,10 +30,10 @@
     - /dev/sdd
     - /dev/sdb
     - /dev/sdc
-    
+
 - platform: command_line
   name: CPU Temperature
-  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  command: "cat /sys/class/thermal/thermal_zone3/temp"
   unit_of_measurement: "°C"
   value_template: "{{ value | multiply(0.001) | round(1) }}"
 

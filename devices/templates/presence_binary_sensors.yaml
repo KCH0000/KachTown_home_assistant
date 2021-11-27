@@ -10,7 +10,7 @@
     entity_id: cover.garage_gate
     to: 'open'
   binary_sensor:
-    - name: garage_presence_detector_trigger  
+    - name: garage_presence_detector_trigger
       unique_id: garage_presence_detector_trigger
       device_class: motion
       state: true
@@ -20,16 +20,16 @@
     - name: garage_presence_detector
       unique_id: garage_presence_detector
       device_class: motion
-      state: "{{ is_state('binary_sensor.garage_motion', 'on') or 
+      state: "{{ is_state('binary_sensor.garage_motion', 'on') or
                  is_state('binary_sensor.garage_presence_detector_trigger', 'on') }}"
       delay_off:
         minutes: 5
 
-- binary_sensor: 
+- binary_sensor:
     name: kitchen_presence_detector
     unique_id: kitchen_presence_detector
     device_class: motion
-    state: "{{ is_state('binary_sensor.kitchen_motion', 'on') or 
+    state: "{{ is_state('binary_sensor.kitchen_motion', 'on') or
                is_state('binary_sensor.kitchen_sofa_motion', 'on') }}"
     delay_off:
       minutes: 20

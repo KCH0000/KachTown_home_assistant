@@ -1,0 +1,8 @@
+kitchen_vent_open_or_close:
+  alias: 'Автоматическое переключение вентиляции кухни'
+  mode: single
+  variables:
+    action: 'open'
+  sequence:
+    - service: "{{ 'cover.' ~ action ~ '_cover' }}"
+      entity_id: cover.kitchen_ventilation

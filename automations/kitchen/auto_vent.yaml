@@ -1,0 +1,13 @@
+- alias: kitchen_vent_close_auto
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kitchen_presence_detector
+  action:
+    service: script.kitchen_vent_open_or_close
+    data:
+      action: >
+        {% if trigger.to_state.state == 'on' %}
+          open
+        {% else %}
+          close
+        {% endif %}

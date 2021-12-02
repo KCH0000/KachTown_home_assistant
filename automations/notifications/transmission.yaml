@@ -6,4 +6,40 @@
     service: notify.telegram_all
     data_template:
       title: "Завершен"
-      message: "{{trigger.event.data.name}}"
+      message: "{{ trigger.event.data.name }}"
+
+- alias: Add torrent from telegram
+  trigger:
+    platform: event
+    event_type: telegram_text
+  condition:
+    condition: or
+    conditions:
+      - condition: template
+        value_template: >-
+          {% set text = trigger.event.data["text"] %}
+          {% set text = text[:6] %}
+          {{ text == 'magnet' }}
+      - condition: template
+        value_template: >-
+          {% set text = trigger.event.data["text"] %}
+          {% set text = text[:4] %}
+          {{ text == 'http' }}
+  action:
+    - service: notify.telegram_kach
+      data:
+        message: '{{ trigger.event.data["from_first"] }} добавляет торрент'
+    - service: transmission.add_torrent
+      data:
+        name: Transmission
+        torrent: '{{ trigger.event.data["text"] }}'
+
+- alias: Completed Torrent
+  trigger:
+    platform: event
+    event_type: transmission_started_torrent
+  action:
+    service: notify.telegram_all
+    data_template:
+      title: "Добавлен"
+      message: "{{ trigger.event.data.name }}"

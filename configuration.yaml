@@ -70,7 +70,7 @@ recorder:
 
 #############################################
 telegram_bot:
-  - platform: broadcast
+  - platform: polling
     api_key: !secret telegram_chatbot_api_key
     allowed_chat_ids:
       - -487298367 # Грачев

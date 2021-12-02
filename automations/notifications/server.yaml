@@ -3,7 +3,7 @@
     platform: numeric_state
     entity_id:
       - sensor.load_15m
-    above: 5
+    above: 8
   action:
     - service: notify.telegram_kach
       data_template:

@@ -37,3 +37,36 @@
         title: "Топас"
         message: >-
           Смена фазы сепитика на {{ states('sensor.septic_phase') }}
+
+- alias: Open_person_gate_by_red_button
+  trigger:
+    platform: event
+    event_type: zwave_js_value_notification
+    event_data:
+      device_id: aaf507008d02b4f33b8864d2c34e1576  # Red button ID
+      value: KeyPressed
+  action:
+    service: switch.turn_on
+    entity_id: switch.yard_gate_person
+
+- alias: Open_full_gate_by_red_button
+  trigger:
+    platform: event
+    event_type: zwave_js_value_notification
+    event_data:
+      device_id: aaf507008d02b4f33b8864d2c34e1576  # Red button ID
+      value: KeyHeldDown
+  action:
+    service: switch.turn_on
+    entity_id: switch.yard_gate_full
+
+- alias: Open_garage_gate_by_red_button
+  trigger:
+    platform: event
+    event_type: zwave_js_value_notification
+    event_data:
+      device_id: aaf507008d02b4f33b8864d2c34e1576  # Red button ID
+      value: KeyPressed2x
+  action:
+    service: cover.toggle
+    entity_id: cover.garage_gate

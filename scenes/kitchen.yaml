@@ -1,6 +1,6 @@
 - name: kitchen_light_off
   entities:
-    light.kitchen_light: 
+    light.kitchen_light:
       state: 'off'
     light.kitchen_light_second:
       state: 'on'
@@ -8,14 +8,14 @@
     light.kitchen_corridor_light:
       state: 'on'
       brightness: 5
-    light.kitchen_light_tabletop: 
+    light.kithen_table_light:
       state: 'off'
-    light.kitchen_light_rgb: 
+    light.kitchen_light_rgb:
       state: 'off'
 
 - name: kitchen_light_half
   entities:
-    light.kitchen_light: 
+    light.kitchen_light:
       state: 'off'
     light.kitchen_light_second:
       state: 'on'
@@ -23,12 +23,12 @@
     light.kitchen_corridor_light:
       state: 'on'
       brightness: 50
-    light.kitchen_light_tabletop:
+    light.kithen_table_light:
       state: 'on'
       brightness: 125
     light.kitchen_light_rgb:
       state: 'on'
-      brightness: 125
+      brightness: 'off'
 
 - name: kitchen_light_full
   entities:
@@ -43,15 +43,15 @@
       brightness: 255
     light.kitchen_light_rgb:
       state: 'on'
-      brightness: 255
-    light.kitchen_light_tabletop:
+      brightness: 200
+    light.kithen_table_light:
       state: 'on'
       brightness: 200
 
 
 - name: kitchen_light_movie
   entities:
-    light.kitchen_light: 
+    light.kitchen_light:
       state: 'off'
     light.kitchen_light_second:
       state: 'on'
@@ -59,7 +59,7 @@
     light.kitchen_corridor_light:
       state: 'on'
       brightness: 14
-    light.kitchen_light_tabletop:
+    light.kithen_table_light:
       state: 'on'
       brightness: 80
     light.kitchen_light_rgb:
@@ -74,27 +74,27 @@
     light.kitchen_corridor_light:
       state: 'on'
       brightness: 255
-    light.kitchen_light_tabletop:
+    light.kithen_table_light:
       state: 'on'
       brightness: 200
 
 - name: kitchen_light_sleep
   entities:
-    light.kitchen_light: 
+    light.kitchen_light:
       state: 'off'
-    light.kitchen_light_second: 
+    light.kitchen_light_second:
       state: 'off'
     light.kitchen_corridor_light:
       state: 'on'
       brightness: 1
-    light.kitchen_light_tabletop: 
+    light.kithen_table_light:
       state: 'off'
-    light.kitchen_light_rgb: 
+    light.kitchen_light_rgb:
       state: 'off'
 
 - name: kitchen_light_day_sleep
   entities:
-    light.kitchen_light: 
+    light.kitchen_light:
       state: 'off'
     light.kitchen_light_second:
       state: 'on'
@@ -102,7 +102,7 @@
     light.kitchen_corridor_light:
       state: 'on'
       brightness: 255
-    light.kitchen_light_tabletop:
+    light.kithen_table_light:
       state: 'on'
       brightness: 200
     light.kitchen_light_rgb:

@@ -124,6 +124,10 @@ webostv:
   host: 192.168.10.23
   name: Kitchen TV
 
+shell_command:
+  change_temperature_bd: >-
+    curl -X POST -H "Content-Type: application/json" -d '{ "turkov": { "temperature": { "outside": {{ outside }} } }}' {{ url }}
+
 modbus:
   - name: "Turkov"
     type: tcp

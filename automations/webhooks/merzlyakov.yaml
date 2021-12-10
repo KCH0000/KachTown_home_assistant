@@ -19,3 +19,14 @@
       state: 'home'
     - service: switch.turn_on
       entity_id: switch.yard_gate_person
+
+- alias: Sync data with merzlyakov HA
+  trigger:
+    platform: state
+    entity_id:
+      - sensor.turkov_outside_temperature
+  action:
+    service: shell_command.change_temperature_bd
+    data:
+      outside: "{{ trigger.to_state.state }}"
+      url: !secret bd_change_temp_webhook

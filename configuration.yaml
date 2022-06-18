@@ -23,9 +23,7 @@ http:
       - 192.168.10.0/24
       - 127.0.0.1
       - !secret external_ip
-      - 172.19.0.0/16
-      - 172.18.0.0/16
-      - 172.17.0.0/16
+      - 172.29.0.0/16
 
 # Includes files setting GLOBAL
 group: !include_dir_merge_named group

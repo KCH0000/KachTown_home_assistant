@@ -1,3 +1,2 @@
-- platform: mqtt
-  name: kitchen_active_mode
+- name: kitchen_active_mode
   state_topic: "custom/sensor/kitchen_active_mode/"

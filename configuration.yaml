@@ -9,8 +9,8 @@ homeassistant:
   allowlist_external_dirs:
     - /tmp
   customize: !include_dir_merge_named customize
-  internal_url: !secret url_ssl
-  external_url: !secret url_ssl
+  internal_url: !secret internal_url
+  external_url: !secret external_url
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
@@ -41,6 +41,9 @@ cover: !include devices/cover.yaml
 zone: !include zones.yaml
 timer: !include devices/timers.yaml
 template: !include_dir_merge_list devices/templates
+mqtt:
+  sensor: !include_dir_merge_list devices/mqtt/sensor
+modbus: !include_dir_merge_list devices/modbus
 
 frontend:
   themes: !include_dir_merge_named themes
@@ -98,15 +101,6 @@ notify:
     platform: telegram
     chat_id: -334095822
 
-
-#############################################
-mqtt:
-  broker: 192.168.10.5
-  port: 1883
-  username: !secret mqtt_user
-  password: !secret mqtt_password
-
-
 #############################################
 hacs:
   token: !secret github_token
@@ -118,54 +112,10 @@ shell_command:
   change_temperature_bd: >-
     curl -X POST -H "Content-Type: application/json" -d '{ "turkov": { "temperature": { "outside": {{ outside }} } }}' {{ url }}
 
-modbus:
-  - name: "Turkov"
-    type: tcp
-    host: 192.168.10.19
-    port: 502
-    sensors:
-      - name: turkov_inside_temperature
-        address: 0x102
-        slave: 5
-        input_type: input
-        unit_of_measurement: °C
-        scale: 0.1
-        precision: 1
-      - name: turkov_filter_state
-        address: 0x106
-        slave: 5
-        input_type: input
-        unit_of_measurement: "%"
-        precision: 1
-      - name: turkov_outside_temperature
-        address: 0x101
-        slave: 5
-        input_type: input
-        unit_of_measurement: °C
-        scale: 0.1
-        precision: 1
-      - name: turkov_error
-        address: 0x107
-        slave: 5
-        input_type: input
-      - name: turkov_fans_speed
-        address: 0x03
-        slave: 5
-        input_type: holding
-      - name: turkov_climate_mode
-        address: 0x04
-        slave: 5
-        input_type: holding
-    switches:
-      - name: turkov_vent
-        address: 0x01
-        slave: 5
-        write_type: holding
-        verify:
-            input_type: holding
-            address: 0x01
-            state_on: 1
-            state_off: 0
+rest_command:
+  bd_open_gate_person:
+    url: !secret bd_open_gate_person
+    method: POST
 
 fan:
   - platform: template
@@ -199,14 +149,3 @@ fan:
           - 'Heater'
           - 'Cooling'
           - 'Away'
-
-# camera:
-#   - platform: ffmpeg
-#     # still_image_url: http://172.16.55.107:8899/
-#     input: "rtsp://172.16.55.107:554/user=user_password=1234_channel=1_stream=0.sdp?real_stream"
-#     # extra_arguments: "-q:v 3"
-#     name: Magistre_cam
-#     # username: user
-#     # password: 1234
-#     # verify_ssl: false
-#     # rtsp_transport: tcp

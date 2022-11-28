@@ -8,10 +8,6 @@
     - type: processor_use
     - type: load_15m
 
-- platform: time_date
-  display_options:
-    - 'time'
-    - 'date'
 
 - platform: template
   sensors:
@@ -36,9 +32,6 @@
   command: "cat /sys/class/thermal/thermal_zone3/temp"
   unit_of_measurement: "°C"
   value_template: "{{ value | multiply(0.001) | round(1) }}"
-
-- platform: uptime
-  name: Uptime
 
 - platform: rest
   name: Dahovskaya_temp

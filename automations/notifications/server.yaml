@@ -61,3 +61,29 @@
       data_template:
         title: "СЕРВЕР"
         message: "Высокая температура CPU"
+
+- alias: Automagistre web server go offline
+  trigger:
+    platform: state
+    entity_id:
+      - binary_sensor.automagistre_web_server
+    from: 'on'
+    to: 'off'
+  action:
+    - service: notify.telegram_kach
+      data_template:
+        title: "WEB SERVER"
+        message: "OFFLINE"
+
+- alias: Changed Automagistre web server state
+  trigger:
+    platform: state
+    entity_id:
+      - binary_sensor.automagistre_web_server
+    from: 'off'
+    to: 'on'
+  action:
+    - service: notify.telegram_kach
+      data_template:
+        title: "WEB SERVER"
+        message: "Online"

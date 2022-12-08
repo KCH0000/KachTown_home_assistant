@@ -75,7 +75,7 @@
         title: "WEB SERVER"
         message: "OFFLINE"
 
-- alias: Changed Automagistre web server state
+- alias: Automagistre web server go online
   trigger:
     platform: state
     entity_id:

@@ -43,6 +43,8 @@ timer: !include devices/timers.yaml
 template: !include_dir_merge_list devices/templates
 mqtt:
   sensor: !include_dir_merge_list devices/mqtt/sensor
+  binary_sensor: !include_dir_merge_list devices/mqtt/binary_sensor
+  switch: !include_dir_merge_list devices/mqtt/switch
 modbus: !include_dir_merge_list devices/modbus
 
 frontend:

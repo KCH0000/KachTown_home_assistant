@@ -1,0 +1,21 @@
+- name: Parking heater
+  state_topic: "/dingtian/relay8130/out/r2"
+  payload_on: "ON"
+  payload_off: "OFF"
+  device_class: heat
+  qos: 0
+  availability:
+  - topic: "/dingtian/relay8130/out/lwt_availability"
+    payload_available: "online"
+    payload_not_available: "offline"
+
+- name: Porch heater
+  state_topic: "/dingtian/relay8130/out/r1"
+  payload_on: "ON"
+  payload_off: "OFF"
+  device_class: heat
+  qos: 0
+  availability:
+  - topic: "/dingtian/relay8130/out/lwt_availability"
+    payload_available: "online"
+    payload_not_available: "offline"

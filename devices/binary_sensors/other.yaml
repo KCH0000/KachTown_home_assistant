@@ -1,8 +1,9 @@
 - platform: command_line
-  command: 'curl --silent -XGET --max-time 1 -I https://www.automagistre.ru/|head -1|grep -q "HTTP/2 200" && (echo "ON") || (echo "OFF")'
+  command: 'curl --silent -XGET --max-time 3 -I https://www.automagistre.ru/|head -1|grep -q "HTTP/2 200" && (echo "ON") || (echo "OFF")'
   name: "automagistre web server"
   scan_interval: 60
-  command_timeout: 1
+  command_timeout: 3
+  device_class: connectivity
 
 - platform: template
   sensors:

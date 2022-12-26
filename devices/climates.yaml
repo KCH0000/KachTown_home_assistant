@@ -49,3 +49,17 @@
   min_cycle_duration:
     minutes: 5
   precision: 0.5
+
+- platform: generic_thermostat
+  name: parking_floor_termostat
+  heater: switch.parking_heater
+  target_sensor: sensor.parking_floor_temperature
+  min_temp: -5
+  max_temp: 15
+  initial_hvac_mode: "off"
+  hot_tolerance: 0
+  cold_tolerance: 1
+  min_cycle_duration:
+    minutes: 25
+  precision: 0.1
+  target_temp_step: 0.5

@@ -15,4 +15,4 @@
     night_tariff:
       friendly_name: 'Ночной тариф'
       value_template: >
-        {{ states('sensor.time') >= '23:00' or states('sensor.time') < '07:00'  }}
+        {{ now() > today_at("23:10") or now() < today_at("06:55")  }}

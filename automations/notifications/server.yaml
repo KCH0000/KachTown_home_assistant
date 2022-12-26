@@ -87,3 +87,29 @@
       data_template:
         title: "WEB SERVER"
         message: "Online"
+
+- alias: Astra ha server go offline
+  trigger:
+    platform: state
+    entity_id:
+      - binary_sensor.astra_ha_is_online
+    from: 'on'
+    to: 'off'
+  action:
+    - service: notify.telegram_kach
+      data_template:
+        title: "ASTRA HA SERVER"
+        message: "OFFLINE"
+
+- alias: Astra ha server go online
+  trigger:
+    platform: state
+    entity_id:
+      - binary_sensor.astra_ha_is_online
+    from: 'off'
+    to: 'on'
+  action:
+    - service: notify.telegram_kach
+      data_template:
+        title: "ASTRA HA SERVER"
+        message: "ONLINE"

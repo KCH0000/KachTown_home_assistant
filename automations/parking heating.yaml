@@ -1,0 +1,19 @@
+- alias: Parking heating ON
+  trigger:
+  - platform: time
+    at: "23:05:00"
+  action:
+  - service: climate.turn_on
+    entity_id: climate.parking_floor_termostat
+  - service: notify.telegram_kach
+    data_template:
+      message: "Включение подогрева парковки"
+
+
+- alias: Parking heating OFF
+  trigger:
+  - platform: time
+    at: "06:50:00"
+  action:
+  - service: climate.turn_off
+    entity_id: climate.parking_floor_termostat

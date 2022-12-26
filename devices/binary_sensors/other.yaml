@@ -5,6 +5,13 @@
   command_timeout: 3
   device_class: connectivity
 
+- platform: command_line
+  command: 'curl --silent -XGET --max-time 3 -I https://ha.astra50.ru/|head -1|grep -q "HTTP/2 200" && (echo "ON") || (echo "OFF")'
+  name: "astra ha is online"
+  scan_interval: 60
+  command_timeout: 3
+  device_class: connectivity
+
 - platform: template
   sensors:
     anybody_home:

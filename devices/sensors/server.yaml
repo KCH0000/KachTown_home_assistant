@@ -22,10 +22,9 @@
 - platform: hddtemp
   host: hddtemp
   disks:
-    - /dev/sda
-    - /dev/sdd
-    - /dev/sdb
-    - /dev/sdc
+    - /dev/disk/by-id/ata-TOSHIBA_HDWD120_Z0BSK9EAS
+    - /dev/disk/by-id/ata-TOSHIBA_HDWD120_Y0ONXD1AS
+    - /dev/disk/by-id/ata-TOSHIBA_HDWT860_5151S79TSRXH
 
 - platform: command_line
   name: CPU Temperature

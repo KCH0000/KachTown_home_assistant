@@ -39,10 +39,9 @@
   trigger:
     platform: numeric_state
     entity_id:
-      - sensor.hd_temperature_dev_sda
-      - sensor.hd_temperature_dev_sdb
-      - sensor.hd_temperature_dev_sdc
-      - sensor.hd_temperature_dev_sdd
+      - sensor.hd_temperature_dev_disk_by_id_ata_toshiba_hdwd120_z0bsk9eas
+      - sensor.hd_temperature_dev_disk_by_id_ata_toshiba_hdwd120_y0onxd1as
+      - sensor.hd_temperature_dev_disk_by_id_ata_toshiba_hdwt860_5151s79tsrxh
     above: 50
   action:
     - service: notify.telegram_kach

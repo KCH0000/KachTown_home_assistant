@@ -42,6 +42,8 @@
       - sensor.hd_temperature_dev_disk_by_id_ata_toshiba_hdwd120_z0bsk9eas
       - sensor.hd_temperature_dev_disk_by_id_ata_toshiba_hdwd120_y0onxd1as
       - sensor.hd_temperature_dev_disk_by_id_ata_toshiba_hdwt860_5151s79tsrxh
+      - sensor.hd_temperature_dev_disk_by_id_ata_wdc_wd2005fbyz_01ycbb2_wd_wmb3g1696592
+      - sensor.hd_temperature_dev_disk_by_id_ata_wdc_wd2005fbyz_01ycbb2_wd_wmb3g1696599
     above: 50
   action:
     - service: notify.telegram_kach
@@ -112,3 +114,17 @@
       data_template:
         title: "ASTRA HA SERVER"
         message: "ONLINE"
+
+- alias: Problem with disk
+  trigger:
+    platform: state
+    entity_id:
+      - binary_sensor.raid_is_problem
+      - binary_sensor.media_is_problem
+    from: 'off'
+    to: 'on'
+  action:
+    - service: notify.telegram_kach
+      data_template:
+        title: "СЕРВЕР"
+        message: "ОШИБКИ НА ДИСКЕ"

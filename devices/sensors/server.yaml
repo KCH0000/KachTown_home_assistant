@@ -25,6 +25,9 @@
     - /dev/disk/by-id/ata-TOSHIBA_HDWD120_Z0BSK9EAS
     - /dev/disk/by-id/ata-TOSHIBA_HDWD120_Y0ONXD1AS
     - /dev/disk/by-id/ata-TOSHIBA_HDWT860_5151S79TSRXH
+    - /dev/disk/by-id/ata-WDC_WD2005FBYZ-01YCBB3_WD-WCC6N3RAKC32
+    - /dev/disk/by-id/ata-WDC_WD2005FBYZ-01YCBB2_WD-WMB3G1696599
+    - /dev/disk/by-id/ata-WDC_WD20EARX-00PASB0_WD-WCAZAA939610
 
 - platform: command_line
   name: CPU Temperature

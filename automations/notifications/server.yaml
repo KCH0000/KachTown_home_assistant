@@ -42,8 +42,9 @@
       - sensor.hd_temperature_dev_disk_by_id_ata_toshiba_hdwd120_z0bsk9eas
       - sensor.hd_temperature_dev_disk_by_id_ata_toshiba_hdwd120_y0onxd1as
       - sensor.hd_temperature_dev_disk_by_id_ata_toshiba_hdwt860_5151s79tsrxh
-      - sensor.hd_temperature_dev_disk_by_id_ata_wdc_wd2005fbyz_01ycbb2_wd_wmb3g1696592
       - sensor.hd_temperature_dev_disk_by_id_ata_wdc_wd2005fbyz_01ycbb2_wd_wmb3g1696599
+      - sensor.hd_temperature_dev_disk_by_id_ata_wdc_wd2005fbyz_01ycbb3_wd_wcc6n3rakc32
+      - sensor.hd_temperature_dev_disk_by_id_ata_wdc_wd20earx_00pasb0_wd_wcazaa939610
     above: 50
   action:
     - service: notify.telegram_kach

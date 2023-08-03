@@ -1,0 +1,33 @@
+- binary_sensor:
+    command: "awk '{sum+=$2} END {print sum}' /media/raid_status"
+    name: Raid disk status
+    unique_id: raid_is_problem
+    value_template: >
+      {% if value == "0" %}
+        OFF
+      {% else %}
+        ON
+      {% endif %}
+    scan_interval: 1800
+    command_timeout: 4
+    device_class: problem
+
+- binary_sensor:
+    command: "awk '{sum+=$2} END {print sum}' /media/data_status"
+    name: Media disk status
+    unique_id: media_is_problem
+    value_template: >
+      {% if value == "0" %}
+        OFF
+      {% else %}
+        ON
+      {% endif %}
+    scan_interval: 1800
+    command_timeout: 1
+    device_class: problem
+
+- sensor:
+    name: CPU Temperature
+    command: "cat /sys/class/thermal/thermal_zone3/temp"
+    unit_of_measurement: "°C"
+    value_template: "{{ value | multiply(0.001) | round(1) }}"

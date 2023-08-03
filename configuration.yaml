@@ -46,6 +46,7 @@ mqtt:
   binary_sensor: !include_dir_merge_list devices/mqtt/binary_sensor
   switch: !include_dir_merge_list devices/mqtt/switch
 modbus: !include_dir_merge_list devices/modbus
+command_line: !include_dir_merge_list devices/command_line
 
 frontend:
   themes: !include_dir_merge_named themes
@@ -110,44 +111,44 @@ hacs:
 #############################################
 
 #############################################
-shell_command:
-  change_temperature_bd: >-
-    curl -X POST -H "Content-Type: application/json" -d '{ "turkov": { "temperature": { "outside": {{ outside }} } }}' {{ url }}
+# shell_command:
+#   change_temperature_bd: >-
+#     curl -X POST -H "Content-Type: application/json" -d '{ "turkov": { "temperature": { "outside": {{ outside }} } }}' {{ url }}
 
 rest_command:
   bd_open_gate_person:
     url: !secret bd_open_gate_person
     method: POST
 
-fan:
-  - platform: template
-    fans:
-      central_ventilation:
-        friendly_name: "Центральная вентиляция"
-        value_template: "{{ states('switch.turkov_vent') }}"
-        preset_mode_template: >
-          {% if is_state('sensor.turkov_climate_mode', '0') %}
-            Normal
-          {% elif is_state('sensor.turkov_climate_mode', '1') %}
-            Heater
-          {% elif is_state('sensor.turkov_climate_mode', '2') %}
-            Cooling
-          {% else %}
-            Normal
-          {% endif %}
-        turn_on:
-          service: switch.turn_on
-          entity_id: switch.turkov_vent
-        turn_off:
-          service: switch.turn_off
-          entity_id: switch.turkov_vent
-        set_preset_mode:
-          service: script.turkov_set_preset_mode
-          data:
-            preset_mode: "{{ preset_mode }}"
-        speed_count: 6
-        preset_modes:
-          - 'Normal'
-          - 'Heater'
-          - 'Cooling'
-          - 'Away'
+# fan:
+#   - platform: template
+#     fans:
+#       central_ventilation:
+#         friendly_name: "Центральная вентиляция"
+#         value_template: "{{ states('switch.turkov_vent') }}"
+#         preset_mode_template: >
+#           {% if is_state('sensor.turkov_climate_mode', '0') %}
+#             Normal
+#           {% elif is_state('sensor.turkov_climate_mode', '1') %}
+#             Heater
+#           {% elif is_state('sensor.turkov_climate_mode', '2') %}
+#             Cooling
+#           {% else %}
+#             Normal
+#           {% endif %}
+#         turn_on:
+#           service: switch.turn_on
+#           entity_id: switch.turkov_vent
+#         turn_off:
+#           service: switch.turn_off
+#           entity_id: switch.turkov_vent
+#         set_preset_mode:
+#           service: script.turkov_set_preset_mode
+#           data:
+#             preset_mode: "{{ preset_mode }}"
+#         speed_count: 6
+#         preset_modes:
+#           - 'Normal'
+#           - 'Heater'
+#           - 'Cooling'
+#           - 'Away'

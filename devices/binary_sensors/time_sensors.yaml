@@ -1,15 +1,3 @@
-- platform: workday
-  name: workday
-  country: RU
-  workdays: [mon, tue, wed, thu, fri]
-  excludes: [sat, sun, holiday]
-  add_holidays:
-    - '2020-02-17'
-    - '2020-02-18'
-    - '2020-02-19'
-    - '2020-02-20'
-    - '2020-02-21'
-
 - platform: template
   sensors:
     night_tariff:

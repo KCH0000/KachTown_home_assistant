@@ -29,12 +29,6 @@
     - /dev/disk/by-id/ata-WDC_WD2005FBYZ-01YCBB2_WD-WMB3G1696599
     - /dev/disk/by-id/ata-WDC_WD20EARX-00PASB0_WD-WCAZAA939610
 
-- platform: command_line
-  name: CPU Temperature
-  command: "cat /sys/class/thermal/thermal_zone3/temp"
-  unit_of_measurement: "°C"
-  value_template: "{{ value | multiply(0.001) | round(1) }}"
-
 - platform: rest
   name: Dahovskaya_temp
   device_class: temperature

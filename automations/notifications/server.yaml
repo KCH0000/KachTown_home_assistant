@@ -45,6 +45,8 @@
       - sensor.hd_temperature_dev_disk_by_id_ata_wdc_wd2005fbyz_01ycbb2_wd_wmb3g1696599
       - sensor.hd_temperature_dev_disk_by_id_ata_wdc_wd2005fbyz_01ycbb3_wd_wcc6n3rakc32
       - sensor.hd_temperature_dev_disk_by_id_ata_wdc_wd20earx_00pasb0_wd_wcazaa939610
+      - sensor.hd_temperature_dev_disk_by_id_ata_st4000vx007_2dt166_zdh742q1
+      - sensor.hd_temperature_dev_disk_by_id_ata_st4000vx007_2dt166_zdh789ta
     above: 50
   action:
     - service: notify.telegram_kach
@@ -122,6 +124,7 @@
     entity_id:
       - binary_sensor.raid_is_problem
       - binary_sensor.media_is_problem
+      - binary_sensor.buba_is_problem
     from: 'off'
     to: 'on'
   action:

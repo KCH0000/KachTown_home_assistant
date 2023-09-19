@@ -26,6 +26,20 @@
     command_timeout: 1
     device_class: problem
 
+- binary_sensor:
+    command: "awk '{sum+=$2} END {print sum}' /media/buba_status"
+    name: Buba disk status
+    unique_id: buba_is_problem
+    value_template: >
+      {% if value == "0" %}
+        OFF
+      {% else %}
+        ON
+      {% endif %}
+    scan_interval: 1800
+    command_timeout: 1
+    device_class: problem
+
 - sensor:
     name: CPU Temperature
     command: "cat /sys/class/thermal/thermal_zone3/temp"

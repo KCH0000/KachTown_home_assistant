@@ -3,6 +3,8 @@
     - type: disk_free
       arg: /media
     - type: disk_free
+      arg: /raid
+    - type: disk_free
       arg: /config
     - type: memory_use_percent
     - type: processor_use
@@ -27,7 +29,8 @@
     - /dev/disk/by-id/ata-TOSHIBA_HDWT860_5151S79TSRXH
     - /dev/disk/by-id/ata-WDC_WD2005FBYZ-01YCBB3_WD-WCC6N3RAKC32
     - /dev/disk/by-id/ata-WDC_WD2005FBYZ-01YCBB2_WD-WMB3G1696599
-    - /dev/disk/by-id/ata-WDC_WD20EARX-00PASB0_WD-WCAZAA939610
+    - /dev/disk/by-id/ata-ST4000VX007-2DT166_ZDH742Q1
+    - /dev/disk/by-id/ata-ST4000VX007-2DT166_ZDH789TA
 
 - platform: rest
   name: Dahovskaya_temp
